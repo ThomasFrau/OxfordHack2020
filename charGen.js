@@ -8,8 +8,6 @@ class Character {
 		this.level = this.generateLevel();
 		this.alignment = this.generateAlignment();
 		this.proficiencies = this.generateProficiencies(this.backround, this.charClass);
-
-		console.log(this.name)
 	}
 
 	generateRandomName()
@@ -21,7 +19,7 @@ class Character {
 		//Takes random index out of both firstNames and secondNames
 		let firstRandName = Math.floor(Math.random() * firstNames.length);
 		let secondRandName = Math.floor(Math.random() * secondNames.length);
-		return (firstName[firstRandName] + " " + secondName[secondRandName]);
+		return (firstNames[firstRandName] + " " + secondNames[secondRandName]);
 	}
 
 	generateClass()
@@ -159,12 +157,11 @@ class Character {
 		}
 
 		//Clear duplicates
-		return proficiences;
+		return proficiencies;
 	}
 }
 
 function generateCharacter(){
-	alert("ppo");
 	let character = new Character();
 	document.getElementById("lstCharName").innerHTML = character.name;
 }
