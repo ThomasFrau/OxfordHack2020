@@ -15,7 +15,15 @@ class Character {
 		this.int = this.makeAttribution();
 		this.wis = this.makeAttribution();
 		this.cha = this.makeAttribution();
-
+		
+		this.HP = this.GetMaxHP();
+		this.proficiency = this.getProficieny();
+		this.speed = this.getSpeed();
+		this.AC = this.getAC();
+		this.hitDie = this.getHitDie();
+		this.hitDieNum = this.getHitDieNum();
+		
+		
 	}
 	
 	rollDice(die) {
