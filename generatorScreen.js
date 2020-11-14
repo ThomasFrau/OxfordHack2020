@@ -45,9 +45,75 @@ function CalculateTile(x,y)
             return 2;
         case 3:
             return 0;      
-        case 4:
+        case 4:         //paths
             //v[0] != 4 && v[1] != 4 && v[2] != 4 && v[3] == 4 && v[5] == 4 && v[6] != 4 && v[7] != 4 && v[8] != 4
-            if (v[1] != 4 && v[3] != 4 && v[5] == 4 && v[7] != 4) {
+
+            if (v[1] == 4 || v[1] == 5) {
+                if (v[7] == 4 || v[7] == 5) {
+                    if (v[3] == 4 || v[3] == 5) {
+                        if (v[5] == 4 || v[5] == 5) {
+                            return 60;
+                        } else {
+                            return 61;
+                        }
+                    } else {
+                        if (v[5] == 4 || v[5] == 5) {
+                            return 59;
+                        } else {
+                            return 54;
+                        }
+                    }
+                } else {
+                    if (v[3] == 4 || v[3] == 5) {
+                        if (v[5] == 4 || v[5] == 5) {
+                            return 63;
+                        } else {
+                            return 64;
+                        }
+                    } else {
+                        if (v[5] == 4 || v[5] == 5) {
+                            return 62;
+                        } else {
+                            return 55;
+                        }
+                    }
+                }
+            } else {
+                if (v[7] == 4 || v[7] == 5) {
+                    if (v[3] == 4 || v[3] == 5) {
+                        if (v[5] == 4 || v[5] == 5) {
+                            return 57;
+                        } else {
+                            return 58;
+                        }
+                    } else {
+                        if (v[5] == 4 || v[5] == 5) {
+                            return 56;
+                        } else {
+                            return 53;
+                        }
+                    }
+                } else {
+                    if (v[3] == 4 || v[3] == 5) {
+                        if (v[5] == 4 || v[5] == 5) {
+                            return 51;
+                        } else {
+                            return 52;
+                        }
+                    } else {
+                        if (v[5] == 4 || v[5] == 5) {
+                            return 50;
+                        } else {
+                            return 83;
+                        }
+                    }
+                }
+            }
+
+
+
+
+            /*if (v[1] != 4 && v[3] != 4 && v[5] == 4 && v[7] != 4) {
                 return 50;
             } else if (v[1] != 4 && v[3] == 4 && v[5] == 4 && v[7] != 4) {
                 return 51;
@@ -81,7 +147,7 @@ function CalculateTile(x,y)
 
             else {
                 return 83;
-            }            
+            }*/
         case 5:
             return 94;
         case 6:
