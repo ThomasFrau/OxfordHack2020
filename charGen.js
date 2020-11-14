@@ -4,10 +4,10 @@ class Character {
 		this.name = this.generateRandomName();
 		this.charClass = this.generateClass();
 		this.race = this.generateRace();
-		this.backround = this.generateBackround();
+		this.background = this.generatebackground();
 		this.level = this.generateLevel();
 		this.alignment = this.generateAlignment();
-		this.proficiencies = this.generateProficiencies(this.backround, this.charClass);
+		this.proficiencies = this.generateProficiencies(this.background, this.charClass);
 	}
 
 	generateRandomName()
@@ -40,14 +40,14 @@ class Character {
 		return races[randomRace];
 	}
 
-	generateBackround()
+	generateBackground()
 	{
-		//random backround selection
+		//random background selection
 		//add JSON dictionary
-		let backround = ["Acolyte", "Charlattan", "Criminal", "Entertainer", "Folk Hero", "Gladiator", "Guild Artisan", "Hermit", "Knight", "Noble", "Outlander", "Pirate", "Sage", "Sailor", "Soldier", "Urchin"];
+		let background = ["Acolyte", "Charlattan", "Criminal", "Entertainer", "Folk Hero", "Gladiator", "Guild Artisan", "Hermit", "Knight", "Noble", "Outlander", "Pirate", "Sage", "Sailor", "Soldier", "Urchin"];
 
-		let randomBackround = Math.floor(Math.random() * backround.length);
-		return backround[randomBackround];
+		let randomBackground = Math.floor(Math.random() * background.length);
+		return background[randomBackground];
 	}
 
 	generateLevel()
@@ -67,12 +67,12 @@ class Character {
 		return alignments[randomAlignment];
 
 	}
-	generateProficiencies(backround, charClass)
+	generateProficiencies(background, charClass)
 	{
 		let proficiencies = [];
 
-		//based on backround adds a proficiency
-		switch(backround)
+		//based on background adds a proficiency
+		switch(background)
 		{
 			case "Acolyte":
 				proficiencies.push("Insight");
