@@ -1,13 +1,15 @@
 class Character {
-	contructor ()
+	constructor ()
 	{
-		this.name = generateRandomName();
-		this.charClass = generateClass();
-		this.race = generateRace();
-		this.backround = generateBackround();
-		this.level = generateLevel();
-		this.alignment = generateAlingment();
-		this.proficiencies = generateProficiencies(this.backround, this.charClass);
+		this.name = this.generateRandomName();
+		this.charClass = this.generateClass();
+		this.race = this.generateRace();
+		this.backround = this.generateBackround();
+		this.level = this.generateLevel();
+		this.alignment = this.generateAlignment();
+		this.proficiencies = this.generateProficiencies(this.backround, this.charClass);
+
+		console.log(this.name)
 	}
 
 	generateRandomName()
@@ -19,7 +21,7 @@ class Character {
 		//Takes random index out of both firstNames and secondNames
 		let firstRandName = Math.floor(Math.random() * firstNames.length);
 		let secondRandName = Math.floor(Math.random() * secondNames.length);
-		return (firstRandName+" "+secondRandName);
+		return (firstName[firstRandName] + " " + secondName[secondRandName]);
 	}
 
 	generateClass()
@@ -28,14 +30,16 @@ class Character {
 		let classes = ["Cleric", "Sorcerer", "Barbarian", "Bard", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Warlock", "Wizard"];
 
 		let randomClass = Math.floor(Math.random() * classes.length);
+		return randomClass;
 	}
 
 	generateRace()
 	{
 		//random race selection
-		let races = ["Dragonborn", "Elf", "Dwarf"];
+		let races = ["Dragonborn", "Elf", "Dwarf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Human", "Triefling"];
 
 		let randomRace = Math.floor(Math.random() * races.length);
+		return randomRace;
 	}
 
 	generateBackround()
@@ -45,6 +49,7 @@ class Character {
 		let backround = ["Acolyte", "Charlattan", "Criminal", "Entertainer", "Folk Hero", "Gladiator", "Guild Artisan", "Hermit", "Knight", "Noble", "Outlander", "Pirate", "Sage", "Sailor", "Soldier", "Urchin"];
 
 		let randomBackround = Math.floor(Math.random() * backround.length);
+		return randomBackround;
 	}
 
 	generateLevel()
@@ -53,7 +58,7 @@ class Character {
 		return level;
 	}
 
-	generateAlingment()
+	generateAlignment()
 	{
 		//will have to based by race
 		//will do later
@@ -152,9 +157,10 @@ class Character {
 		{
 			//TODO
 		}
+
+		//Clear duplicates
+		return proficiences;
 	}
-
-
 }
 
 function generateCharacter(){
