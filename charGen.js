@@ -3,7 +3,7 @@ class Character()
 	contructor ()
 	{
 		this.name = generateRandomName();
-		this.class = generateClass();
+		this.charClass = generateClass();
 		this.race = generateRace();
 		this.backround = generateBackround();
 		this.level = generateLevel();
@@ -48,7 +48,8 @@ class Character()
 
 	function generateLevel()
 	{
-		document.write(1);
+		let level = 1;
+		return level;
 	}
 
 	function generateAlingment()
