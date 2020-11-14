@@ -15,37 +15,55 @@ function TestFunction()
 
 function DisplayMap()
 {
-    for (let i = 0; i < mapArray.length; i++)
+    for (let y = 0; y < mapArray.length; y++)
     {
-        for (let j = 0; j < mapArray.length; j++)
+        for (let x = 0; x < mapArray.length; x++)
         {
-            context.drawImage(tiles, 16 * CalculateTile(mapArray[i][j]), 0, 16, 16, 16 * i, 16 * j, 16, 16);
+            context.drawImage(tiles, 16 * CalculateTile(x, y), 0, 16, 16, 16 * x, 16 * y, 16, 16);
         }
     }
 }
 
-function CalculateTile(i)
+function CalculateTile(x,y)
 {
-    if (i == 1) {
-        return 1;
-    }
-    else if (i == 2) {
-        return 2;
-    }
-    else if (i == 3) {
-        return 0;
-    }
-    else if (i == 4) {
-        return 83;
-    }
-    else if (i == 5) {
-        return 94;
-    }
-    else if (i == 6) {
-        return 3;
-    }
-    else if (i == 7) {
-        return 12;
-    }
-}
+    let surroundingArray = [
+        [mapArray[x - 1][y - 1], mapArray[x][y - 1], mapArray[x + 1][y - 1]]
+        [mapArray[x - 1][y], mapArray[x][y], mapArray[x + 1][y]]
+        [mapArray[x - 1][y + 1], mapArray[x][y + 1], mapArray[x + 1][y + 1]]
+        ]
 
+    switch (surroundingArray)
+    {
+        case [
+            [1, 1, 1]
+            [1, 1, 1]
+            [1, 1, 1]
+        ]:
+            return 1;
+        default:
+            return 0;
+    }
+
+    /*switch (mapArray[x][y])
+    {
+        case 1:
+            return 1;
+        case 2:
+            return 2;
+        case 3:
+            return 0;      
+        case 4: //path
+            if (mapArray[x][y - 1] == 4 || mapArray[x][y - 1] == 5) {
+                return 54;
+            }
+            else{
+                return 53;
+            }
+        case 5:
+            return 94;
+        case 6:
+            return 3;
+        case 7:
+            return 12;
+    }*/
+}
