@@ -18,7 +18,7 @@ class Item
 		switch(typeOfItem[itemTomake])
 		{
 			case "Trinket":
-				this.makeTrinket();
+				return this.makeTrinket();
 				break;
 
 			case "Weapon":
@@ -47,11 +47,9 @@ class Item
 		let randType = Math.floor(Math.random() * typesOfTrinkets.length);
 		let randEff = Math.floor(Math.random() * typesOfEffects);
 
-		console.log(adjectives[randAdj]);
 
 		finalItem = finalItem + " " + adjectives[randAdj];
 
-		console.log(finalItem);
 		return finalItem;
 	}
 
