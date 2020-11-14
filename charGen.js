@@ -47,7 +47,7 @@ class Character {
 		let backround = ["Acolyte", "Charlattan", "Criminal", "Entertainer", "Folk Hero", "Gladiator", "Guild Artisan", "Hermit", "Knight", "Noble", "Outlander", "Pirate", "Sage", "Sailor", "Soldier", "Urchin"];
 
 		let randomBackround = Math.floor(Math.random() * backround.length);
-		return randomBackround;
+		return backround[randomBackround];
 	}
 
 	generateLevel()
@@ -60,6 +60,11 @@ class Character {
 	{
 		//will have to based by race
 		//will do later
+
+		let alignments = ["Lawful Good", "Neutral Good", "Neutral", "Chaotic Good", "Lawful Neutral", "Chaotic Neutral", "Lawful Evil", "Neutral Evil", "Chaotic Evil"];
+		let randomAlignment = Math.floor(Math.random() * alignments.length);
+
+		return alignments[randomAlignment];
 
 	}
 	generateProficiencies(backround, charClass)
