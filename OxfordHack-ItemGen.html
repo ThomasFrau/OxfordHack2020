@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+	<head>
+		<title>DND Item Generator - OxfordHack</title>
+		<style>
+			canvas {
+				border: 1px solid black;
+			}
+			main {
+				display: inline-block;
+				width: 84%;
+			}
+			aside {
+				display: inline-block;
+				width: 15%;
+				float: right;
+			}
+			.asset {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<img id="img_Tileset" class="asset" src="Assets/Tileset.png" alt="" />
+		<header>
+			<nav>
+				<a href="https://ramranch.xxx/">Main Page</a>
+				<a href="OxfordHack-MapGen.html">Generate A Map</a>
+				<a href="OxfordHack-CharGen.html">Generate A Character</a>
+				<a href="OxfordHack-ItemGen.html">Generate An Item</a>
+			</nav>
+		</header>
+		<main>
+			<h1>Item Generator</h1>
+			<p id="Item">Put Item here</p>
+		</main>
+		<aside>
+			<button type="button" onclick="itemGen();">Generate Item!</button>
+		</aside>
+		<script src="itemgen.js"></script>
+	</body>
+</html>
