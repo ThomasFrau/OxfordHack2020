@@ -41,6 +41,13 @@ class Character {
         this.sleight = this.makeSkill(this.dex);
         this.stealth = this.makeSkill(this.dex);
         this.survival = this.makeSkill(this.wis); 
+
+		this.strSaveThrow = this.makeSkill(this.str);
+		this.dexSaveThrow = this.makeSkill(this.dex);
+		this.conSaveThrow = this.makeSkill(this.con);
+		this.intSaveThrow = this.makeSkill(this.int);
+		this.wisSaveThrow = this.makeSkill(this.wis);
+		this.chaSaveThrow = this.makeSkill(this.cha);
 		
 	}
 	
@@ -327,5 +334,14 @@ function generateCharacter(){
 	document.getElementById("lstSklDexSoh").innerHTML = "Sleight of Hand (Dex): "+character.sleight;
 	document.getElementById("lstSklDexStl").innerHTML = "Stealth (Dex): "+character.stealth;
 	document.getElementById("lstSklWisSur").innerHTML = "Survival (Wis): "+character.survival;
+
+	
+	document.getElementById("lstSTRsav").innerHTML = "Strength: "+character.strSaveThrow;
+	document.getElementById("lstDEXsav").innerHTML = "Dexterity: "+character.dexSaveThrow;
+	document.getElementById("lstCONsav").innerHTML = "Constitution: "+character.conSaveThrow;
+	document.getElementById("lstINTsav").innerHTML = "Intelligence: "+character.intSaveThrow;
+	document.getElementById("lstWISsav").innerHTML = "Wisdom: "+character.wisSaveThrow
+	document.getElementById("lstCHAsav").innerHTML = "Charisma: "+character.chaSaveThrow;
+
 
 }
