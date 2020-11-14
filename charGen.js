@@ -9,6 +9,10 @@ class Character {
 		this.alignment = this.generateAlignment();
 		this.proficiencies = this.generateProficiencies(this.background, this.charClass);
 	}
+	
+	rollDice(die) {
+		return Math.floor(Math.random() * die)+1;
+	}
 
 	generateRandomName()
 	{
