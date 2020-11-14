@@ -7,6 +7,7 @@ class Character {
 		this.backround = generateBackround();
 		this.level = generateLevel();
 		this.alignment = generateAlingment();
+		this.proficiencies = generateProficiencies(this.backround, this.charClass);
 	}
 
 	generateRandomName()
@@ -24,7 +25,7 @@ class Character {
 	generateClass()
 	{
 		//random class selection
-		let classes = ["Cleric", "Sorcerer", "Barber"];
+		let classes = ["Cleric", "Sorcerer", "Barbarian", "Bard", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Warlock", "Wizard"];
 
 		let randomClass = Math.floor(Math.random() * classes.length);
 	}
@@ -41,7 +42,7 @@ class Character {
 	{
 		//random backround selection
 		//add JSON dictionary
-		let backround = ["Acolyte", "Charlattan", "Criminal"];
+		let backround = ["Acolyte", "Charlattan", "Criminal", "Entertainer", "Folk Hero", "Gladiator", "Guild Artisan", "Hermit", "Knight", "Noble", "Outlander", "Pirate", "Sage", "Sailor", "Soldier", "Urchin"];
 
 		let randomBackround = Math.floor(Math.random() * backround.length);
 	}
@@ -56,7 +57,104 @@ class Character {
 	{
 		//will have to based by race
 		//will do later
+
 	}
+	generateProficiencies(backround, charClass)
+	{
+		let proficiencies = [];
+
+		//based on backround adds a proficiency
+		switch(backround)
+		{
+			case "Acolyte":
+				proficiencies.append("Insight");
+				proficiencies.append("Religion");
+				break;
+
+			case "Charlatan":
+				proficiencies.append("Deception");
+				proficiencies.append("Sleight of Hand");
+				break;
+
+			case "Criminal":
+				proficiencies.append("Deception");
+				proficiencies.append("Stealth");
+				break;
+
+			case "Entertainer":
+				proficiencies.append("Acrobatics");
+				proficiencies.append("Performance");
+				break;
+
+			case "Folk Hero":
+				proficiencies.append("Animal Handling");
+				proficiencies.append("Survival");
+				break;
+
+			case "Gladiator":
+				proficiencies.append("Acrobatics");
+				proficiencies.append("Performance");
+				break;
+
+			case "Guild Artisan":
+				proficiencies.append("Insight");
+				proficiencies.append("Persuasion");
+				break;
+
+			case "Hermit":
+				proficiencies.append("Medicine");
+				proficiencies.append("Religion");
+				break;
+
+			case "Knight":
+				proficiencies.append("History");
+				proficiencies.append("Persuasion");
+				break;
+
+			case "Noble":
+				proficiencies.append("History");
+				proficiencies.append("Persuasion");
+				break;
+
+			case "Outlander":
+				proficiencies.append("Athletics");
+				proficiencies.append("Survival");
+				break;
+
+			case "Pirate":
+				proficiencies.append("Athletics");
+				proficiencies.append("Perception");
+				break;
+
+			case "Sage":
+				proficiencies.append("Arcana");
+				proficiencies.append("History");
+				break;
+
+			case "Sailor":
+				proficiencies.append("Athletics");
+				proficiencies.append("Perception");
+				break;
+
+			case "Soldier":
+				proficiencies.append("Athletics");
+				proficiencies.append("Intimidation");
+				break;
+
+			case "Urchin":
+				proficiencies.append("Sleight of Hand");
+				proficiencies.append("Stealth");
+				break;
+		}
+
+		//based on charClass adds a proficiency
+		switch(charClass)
+		{
+			//TODO
+		}
+	}
+
+
 }
 
 function generateCharacter(){
