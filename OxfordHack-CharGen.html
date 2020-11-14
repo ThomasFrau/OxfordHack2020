@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DND Character Generator - OxfordHack</title>
+		<style>
+			canvas {
+				border: 1px solid black;
+			}
+			main {
+				display: inline-block;
+				width: 84%;
+			}
+			aside {
+				display: inline-block;
+				width: 15%;
+				float: right;
+			}
+			.asset {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+	<img id="img_Tileset" class="asset" src="Assets/Tileset.png" alt=""/>
+		<header>
+			<nav>
+				<a href="https://ramranch.xxx/">Main Page</a>
+				<a href="OxfordHack-MapGen.html">Generate A Map</a>
+				<a href="">Generate A Character</a>
+				<a href="">Generate An Item</a>
+			</nav>
+			<h1>Character Generator</h1>
+		</header>
+		<main>
+			<section>
+				<h2>Character Meta</h2>
+				<ul>
+					<li id="lstCharName">Character Name</li>
+					<li id="lstRace">Race</li>
+					<li id="lstClass">Class</li>
+					<li id="lstLevel">Level</li>
+					<li id="lstBackground">Background</li>
+					<li id="lstAlignment">Alignment</li>
+				</ul>
+			</section>
+			<section>
+				Attributes
+				<ul>
+					<li id="lstSTR">Strength</li>
+					<li id="lstDEX">Dexterity</li>
+					<li id="lstCON">Constitution</li>
+					<li id="lstINT">Intelligence</li>
+					<li id="lstWIS">Wisdom</li>
+					<li id="lstCHA">Charisma</li>
+				</ul>
+			</section>
+		</main>
+		<aside>
+			<button type="button" onclick="alert('Map Generated!')">Generate Map!</button>
+		</aside>
+		<script src="dndmapgen.js"></script>
+	</body>
+</html>
