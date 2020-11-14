@@ -21,11 +21,16 @@ class Character {
 		let i;
 		for (i = 0; i < 4; i++)
 		{
-			rolls.push(rollDice(6));
+			rolls.push(this.rollDice(6));
 		}
 		console.log(rolls);
 		rolls.sort((a,b) => a - b);
 		console.log(rolls);
+		let attribute = 0;
+		for (let i = 1; i < 4; i++) {
+			attribute += rolls[i];
+		}
+		return attribute;
 	}
 
 	generateRandomName()
