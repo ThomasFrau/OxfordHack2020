@@ -29,7 +29,7 @@ class Character {
         this.athletics = this.makeSkill(this.str);
         this.deception = this.makeSkill(this.cha);
         this.history = this.makeSkill(this.int);
-        this.isight = this.makeSkill(this.wis);
+        this.insight = this.makeSkill(this.wis);
         this.intimidation = this.makeSkill(this.cha);
         this.investigation = this.makeSkill(this.int);
         this.medicine = this.makeSkill(this.wis);
@@ -280,4 +280,24 @@ function generateCharacter(){
 	document.getElementById("lstINT").innerHTML = "Intelligence: "+character.int;
 	document.getElementById("lstWIS").innerHTML = "Wisdom: "+character.wis;
 	document.getElementById("lstCHA").innerHTML = "Charisma: "+character.cha;
+
+	document.getElementById("lstSklDexAcr").innerHTML = "Acrobatics (Dex): "+character.acrobatics;
+	document.getElementById("lstSklWisAnm").innerHTML = "Animal Handling (Wis): "+character.animalHandling;
+	document.getElementById("lstSklIntArc").innerHTML = "Arcana (Int): "+character.arcana;
+	document.getElementById("lstSklStrAth").innerHTML = "Athletics (Str): "+character.athletics;
+	document.getElementById("lstSklChaDec").innerHTML = "Deception (Cha): "+character.deception;
+	document.getElementById("lstSklIntHis").innerHTML = "History (Int): "+character.history;
+	document.getElementById("lstSklWisIns").innerHTML = "Insight (Wis): "+character.insight;
+	document.getElementById("lstSklChaItm").innerHTML = "Intimidation (Cha): "+character.intimidation;
+	document.getElementById("lstSklIntInv").innerHTML = "Investigation (Int): "+character.investigation;
+	document.getElementById("lstSklWisMed").innerHTML = "Medicine (Wis): "+character.medicine;
+	document.getElementById("lstSklIntNat").innerHTML = "Nature (Int): "+character.nature;
+	document.getElementById("lstSklWisPrc").innerHTML = "Perception (Wis): "+character.perception;
+	document.getElementById("lstSklChaPfm").innerHTML = "Performance (Cha): "+character.performance;
+	document.getElementById("lstSklChaPrs").innerHTML = "Persuasion (Cha): "+character.persuasion;
+	document.getElementById("lstSklIntRel").innerHTML = "Religion (Int): "+character.religion;
+	document.getElementById("lstSklDexSoh").innerHTML = "Sleight of Hand (Dex): "+character.sleight;
+	document.getElementById("lstSklDexStl").innerHTML = "Stealth (Dex): "+character.stealth;
+	document.getElementById("lstSklWisSur").innerHTML = "Survival (Wis): "+character.survival;
+
 }
