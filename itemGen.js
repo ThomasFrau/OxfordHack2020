@@ -1,9 +1,14 @@
+var adjectives = ["Seductive", "Dank", "Golden", "Silver", "Small", "Big", "Tiny", "Gigantic", "Heavy", "Light", "Diamond", "Wooden", "Expensive", "Cheap", "Dirty", "Used", "Brand-new", "Broken", "Exotic", "Powerful", "Burning", "Wireless", "Invisible", "Cringey", "Clean", "Creepy", "Useless", "German-made"];
+
+
 class Item
 {
 	constructor()
 	{
 		this.item = this.createItem();
 	}
+
+	//all of the possible adjectives for each item besides food (maybe for food as well)
 
 	createItem()
 	{
@@ -13,7 +18,7 @@ class Item
 		switch(typeOfItem[itemTomake])
 		{
 			case "Trinket":
-				return "Trinket";
+				this.makeTrinket();
 				break;
 
 			case "Weapon":
@@ -29,6 +34,27 @@ class Item
 				break;
 		}
 	}
+
+	makeTrinket()
+	{
+
+		//just doesnt work for some reason
+		let finalItem = '';
+		let typesOfTrinkets = ["Amulet", "Ring", "Tooth", "Earring", "Spoon", "Mirror", "Cup", "Hairbrush", "Doorknob", "Book"];
+		let typesOfEffects = ["that turns you invisible", "that makes you go mad", "that turns you into a wolf", "that allows you to hear to demons", "that turns you into a pickle"];
+
+		let randAdj = Math.floor(Math.random() * adjectives.length);
+		let randType = Math.floor(Math.random() * typesOfTrinkets.length);
+		let randEff = Math.floor(Math.random() * typesOfEffects);
+
+		console.log(adjectives[randAdj]);
+
+		finalItem = finalItem + " " + adjectives[randAdj];
+
+		console.log(finalItem);
+		return finalItem;
+	}
+
 }
 
 function generateItem()
