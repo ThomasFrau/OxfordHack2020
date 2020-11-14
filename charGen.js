@@ -1,5 +1,4 @@
-class Character()
-{
+class Character {
 	contructor ()
 	{
 		this.name = generateRandomName();
@@ -19,9 +18,10 @@ class Character()
 		//Takes random index out of both firstNames and secondNames
 		let firstRandName = Math.floor(Math.random() * firstNames.length);
 		let secondRandName = Math.floor(Math.random() * secondNames.length);
+		return (firstRandName+" "+secondRandName);
 	}
 
-	function generateClass()
+	generateClass()
 	{
 		//random class selection
 		let classes = ["Cleric", "Sorcerer", "Barber"];
@@ -29,7 +29,7 @@ class Character()
 		let randomClass = Math.floor(Math.random() * classes.length);
 	}
 
-	function generateRace()
+	generateRace()
 	{
 		//random race selection
 		let races = ["Dragonborn", "Elf", "Dwarf"];
@@ -37,7 +37,7 @@ class Character()
 		let randomRace = Math.floor(Math.random() * races.length);
 	}
 
-	function generateBackround()
+	generateBackround()
 	{
 		//random backround selection
 		//add JSON dictionary
@@ -46,15 +46,21 @@ class Character()
 		let randomBackround = Math.floor(Math.random() * backround.length);
 	}
 
-	function generateLevel()
+	generateLevel()
 	{
 		let level = 1;
 		return level;
 	}
 
-	function generateAlingment()
+	generateAlingment()
 	{
 		//will have to based by race
 		//will do later
 	}
+}
+
+function generateCharacter(){
+	alert("ppo");
+	let character = new Character();
+	document.getElementById("lstCharName").innerHTML = character.name;
 }
