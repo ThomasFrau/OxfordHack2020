@@ -163,5 +163,10 @@ class Character {
 
 function generateCharacter(){
 	let character = new Character();
-	document.getElementById("lstCharName").innerHTML = character.name;
+	document.getElementById("lstCharName").innerHTML = "Name: "+character.name;
+	document.getElementById("lstRace").innerHTML = "Race: "+character.race;
+	document.getElementById("lstClass").innerHTML = "Class: "+character.charClass;
+	document.getElementById("lstLevel").innerHTML = "Level: "+character.level;
+	document.getElementById("lstBackground").innerHTML = "Background: "+character.background;
+	document.getElementById("lstAlignment").innerHTML = "Alignment: "+character.alignment;
 }
