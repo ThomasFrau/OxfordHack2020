@@ -31,9 +31,7 @@ class Character {
 		{
 			rolls.push(this.rollDice(6));
 		}
-		console.log(rolls);
 		rolls.sort((a,b) => a - b);
-		console.log(rolls);
 		let attribute = 0;
 		for (let i = 1; i < 4; i++) {
 			attribute += rolls[i];
@@ -205,4 +203,11 @@ function generateCharacter(){
 	document.getElementById("lstLevel").innerHTML = "Level: "+character.level;
 	document.getElementById("lstBackground").innerHTML = "Background: "+character.background;
 	document.getElementById("lstAlignment").innerHTML = "Alignment: "+character.alignment;
+	
+	document.getElementById("lstSTR").innerHTML = "Strength: "+character.str;
+	document.getElementById("lstDEX").innerHTML = "Dexterity: "+character.dex;
+	document.getElementById("lstCON").innerHTML = "Constitution: "+character.con;
+	document.getElementById("lstINT").innerHTML = "Intelligence: "+character.int;
+	document.getElementById("lstWIS").innerHTML = "Wisdom: "+character.wis;
+	document.getElementById("lstCHA").innerHTML = "Charisma: "+character.cha;
 }
