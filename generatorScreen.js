@@ -5,7 +5,7 @@ const context = canvas.getContext("2d");
 
 let temp = new Image()
 
-temp.src = "Assets/tileSet/SP-Land.png";
+temp.src = "Assets/tileSet/tileset.png";
 
 function TestFunction()
 {
