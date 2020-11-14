@@ -231,7 +231,7 @@ function genLake(mapArray){
     if (mapArray[i].length > 50){
       mapArray[i] = mapArray[i].slice(0,50);
     }
-    document.write(mapArray[i] + "<br>");
+    //document.write(mapArray[i] + "<br>");
   }
 }
 genLake(mapArray);

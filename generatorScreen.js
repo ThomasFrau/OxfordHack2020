@@ -26,31 +26,18 @@ function DisplayMap()
 
 function CalculateTile(x,y)
 {
-    /*let surroundingArray = [
-        [mapArray[x - 1][y - 1], mapArray[x][y - 1], mapArray[x + 1][y - 1]]
-        [mapArray[x - 1][y], mapArray[x][y], mapArray[x + 1][y]]
-        [mapArray[x - 1][y + 1], mapArray[x][y + 1], mapArray[x + 1][y + 1]]
-        ]
+    let v = [
+        GetTerrainType(x - 1, y - 1), GetTerrainType(x, y - 1), GetTerrainType(x + 1, y - 1),
+        GetTerrainType(x - 1, y), GetTerrainType(x, y), GetTerrainType(x + 1, y),
+        GetTerrainType(x - 1, y + 1), GetTerrainType(x, y + 1), GetTerrainType(x + 1, y + 1)];
 
-    switch (surroundingArray)
-    {
-        case [
-            [1, 1, 1]
-            [1, 1, 1]
-            [1, 1, 1]
-        ]:
-            return 1;
-        case [
-            [1, 1, 1]
-            [1, 1, 1]
-            [1, 1, 1]
-        ]:
-            return 1;
-        default:
-            return 0;
-    }*/
+    //v:
+    //0  1  2
+    //3  4  5
+    //6  7  8
 
-    switch (mapArray[x][y])
+
+    switch (v[4])
     {
         case 1:
             return 1;
@@ -59,7 +46,42 @@ function CalculateTile(x,y)
         case 3:
             return 0;      
         case 4:
-            return 54;
+            //v[0] != 4 && v[1] != 4 && v[2] != 4 && v[3] == 4 && v[5] == 4 && v[6] != 4 && v[7] != 4 && v[8] != 4
+            if (v[1] != 4 && v[3] != 4 && v[5] == 4 && v[7] != 4) {
+                return 50;
+            } else if (v[1] != 4 && v[3] == 4 && v[5] == 4 && v[7] != 4) {
+                return 51;
+            } else if (v[1] != 4 && v[3] == 4 && v[5] != 4 && v[7] != 4) {
+                return 52;
+            } else if (v[1] != 4 && v[3] != 4 && v[5] != 4 && v[7] == 4) {
+                return 53;
+            } else if (v[1] == 4 && v[3] != 4 && v[5] != 4 && v[7] == 4) {
+                return 54;
+            } else if (v[1] == 4 && v[3] != 4 && v[5] != 4 && v[7] != 4) {
+                return 55;
+            } else if (v[1] != 4 && v[3] != 4 && v[5] == 4 && v[7] == 4) {
+                return 56;
+            } else if (v[1] != 4 && v[3] == 4 && v[5] == 4 && v[7] == 4) {
+                return 57;
+            } else if (v[1] != 4 && v[3] == 4 && v[5] != 4 && v[7] == 4) {
+                return 58;
+            } else if (v[1] == 4 && v[3] != 4 && v[5] == 4 && v[7] == 4) {
+                return 59;
+            } else if (v[1] == 4 && v[3] == 4 && v[5] == 4 && v[7] == 4) {
+                return 60;
+            } else if (v[1] == 4 && v[3] == 4 && v[5] != 4 && v[7] == 4) {
+                return 61;
+            } else if (v[1] == 4 && v[3] != 4 && v[5] == 4 && v[7] != 4) {
+                return 62;
+            } else if (v[1] == 4 && v[3] == 4 && v[5] == 4 && v[7] != 4) {
+                return 63;
+            } else if (v[1] == 4 && v[3] == 4 && v[5] != 4 && v[7] != 4) {
+                return 64;
+            }
+
+            else {
+                return 83;
+            }            
         case 5:
             return 94;
         case 6:
@@ -67,4 +89,24 @@ function CalculateTile(x,y)
         case 7:
             return 12;
     }
+}
+
+//This is nasty
+function GetTerrainType(x, y)
+{
+    let output = 2;
+    try {
+        output = mapArray[x][y];
+    } catch(err){
+        output = 2;
+    }
+    if (output == undefined) {
+        output = 2;
+    }
+    return output;
+}
+
+function Surroundings(x, y)
+{
+    return 
 }
