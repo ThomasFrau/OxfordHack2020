@@ -4,7 +4,7 @@ class Character {
 		this.name = this.generateRandomName();
 		this.charClass = this.generateClass();
 		this.race = this.generateRace();
-		this.background = this.generatebackground();
+		this.background = this.generateBackground();
 		this.level = this.generateLevel();
 		this.alignment = this.generateAlignment();
 		this.proficiencies = this.generateProficiencies(this.background, this.charClass);
