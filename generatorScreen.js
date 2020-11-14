@@ -26,7 +26,7 @@ function DisplayMap()
 
 function CalculateTile(x,y)
 {
-    let surroundingArray = [
+    /*let surroundingArray = [
         [mapArray[x - 1][y - 1], mapArray[x][y - 1], mapArray[x + 1][y - 1]]
         [mapArray[x - 1][y], mapArray[x][y], mapArray[x + 1][y]]
         [mapArray[x - 1][y + 1], mapArray[x][y + 1], mapArray[x + 1][y + 1]]
@@ -40,11 +40,17 @@ function CalculateTile(x,y)
             [1, 1, 1]
         ]:
             return 1;
+        case [
+            [1, 1, 1]
+            [1, 1, 1]
+            [1, 1, 1]
+        ]:
+            return 1;
         default:
             return 0;
-    }
+    }*/
 
-    /*switch (mapArray[x][y])
+    switch (mapArray[x][y])
     {
         case 1:
             return 1;
@@ -52,18 +58,13 @@ function CalculateTile(x,y)
             return 2;
         case 3:
             return 0;      
-        case 4: //path
-            if (mapArray[x][y - 1] == 4 || mapArray[x][y - 1] == 5) {
-                return 54;
-            }
-            else{
-                return 53;
-            }
+        case 4:
+            return 54;
         case 5:
             return 94;
         case 6:
             return 3;
         case 7:
             return 12;
-    }*/
+    }
 }
