@@ -1,6 +1,7 @@
 class Character {
 	constructor ()
 	{
+		//Set variables
 		this.name = this.generateRandomName();
 		this.charClass = this.generateClass();
 		this.race = this.generateRace();
@@ -48,16 +49,16 @@ class Character {
 		this.intSaveThrow = this.makeSkill(this.int);
 		this.wisSaveThrow = this.makeSkill(this.wis);
 		this.chaSaveThrow = this.makeSkill(this.cha);
-		
+		//Update skills if proficient
 		this.addProficiency();
 		
 	}
 	
-	rollDice(die) {
+	rollDice(die) { // Roll a d(die)
 		return Math.floor(Math.random() * die)+1;
 	}
 
-	makeAttribution()
+	makeAttribution() // Gives attribute modifier
 	{
 		let rolls = [];
 
@@ -74,7 +75,7 @@ class Character {
 		return attribute;
 	}
 
-	generateRandomName()
+	generateRandomName() // Generates a name
 	{
 		//generates random number
 		let firstNames = ["Adam", "Joe", "Noel", "Anlow", "Bram", "Xandrilla", "Tylsa", "Krynt", "Caskajaro", "Vincent", "Markus", "Remora", "Tura", "Lorelei", "Semil", "Lurtum", "Andujar", "Armagam", "Saxavis", "Tenahn", "Xafiq", "Artana", "Myrka", "Sarcha", "Agaro", "Melgar", "Rozag", "Wolvar", "Tredigar", "Geralt", "Beyla", "Marnia", "Roksana", "Xoneras", "Turue", "Ankhus"];
