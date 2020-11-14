@@ -8,7 +8,26 @@ class Item
 	createItem()
 	{
 		let typeOfItem = ["Trinket", "Weapon", "Armour", "Food"];
-		return "Sex Toy"
+		let itemTomake = Math.floor(Math.random() * typeOfItem.length);
+
+		switch(typeOfItem[itemTomake])
+		{
+			case "Trinket":
+				return "Trinket";
+				break;
+
+			case "Weapon":
+				return "Weapon";
+				break;
+
+			case "Armour":
+				return "Armour";
+				break;
+
+			case "Food":
+				return "Food";
+				break;
+		}
 	}
 }
 
