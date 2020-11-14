@@ -16,12 +16,13 @@ class Character {
 		this.wis = this.makeAttribution();
 		this.cha = this.makeAttribution();
 		
-		this.HP = this.GetMaxHP();
+		this.hitDie = this.getHitDie();
+		this.hitDieNum = this.getHitDieNum();
+		this.HP = this.getMaxHP();
 		this.proficiency = this.getProficieny();
 		this.speed = this.getSpeed();
 		this.AC = this.getAC();
-		this.hitDie = this.getHitDie();
-		this.hitDieNum = this.getHitDieNum();
+		
 		
 		
 	}
@@ -201,6 +202,36 @@ class Character {
 		//Clear duplicates
 		return proficiencies;
 	}
+	getMaxHP() {
+		let conatt = 1;
+		//when level is one
+		let HP = this.hitDie + conatt;
+		for (let i = 1; i < this.level; i++){
+			HP += this.hitDie
+		}
+		return HP;
+	}
+	
+	getHitDie() {
+		return 8;
+	}
+	
+	getHitDieNum(){
+		return 3;
+	}
+	
+	getProficieny(){
+		return 2;
+	}
+	
+	getSpeed(){
+		return 25;
+	}
+	
+	getAC(){
+		return 10;
+	}
+
 }
 
 function generateCharacter(){
