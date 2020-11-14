@@ -68,8 +68,8 @@ class Character {
 	generateRandomName()
 	{
 		//generates random number
-		let firstNames = ["Adam", "Joe", "Noel"];
-		let secondNames = ["Poopy", "Smith", "Frau"];
+		let firstNames = ["Adam", "Joe", "Noel", "Anlow", "Bram", "Xandrilla", "Tylsa", "Krynt", "Caskajaro", "Vincent", "Markus", "Remora", "Tura", "Lorelei", "Semil", "Lurtum", "Andujar", "Armagam", "Saxavis", "Tenahn", "Xafiq", "Artana", "Myrka", "Sarcha", "Agaro", "Melgar", "Rozag", "Wolvar", "Tredigar", "Geralt", "Beyla", "Marnia", "Roksana", "Xoneras", "Turue", "Ankhus"];
+        let secondNames = ["Poopy","Amarzian", "Smith", "Frau", "Faringray", "Meklan", "Carnago", "Zeth", "Kazimir", "Incirion", "Dacian", "Archidius", "Xerek", "Tricker", "Skiprock", "Woodenhawk", "Blackwater", "Sunshadow", "Zolerii", "Starfeon", "Zaquivir", "Skalandor", "Lantheon", "Fletcher", "Falck", "Selg", "Varzand", "Webb", "Voortham", "Vrago", "Trevethor", "Lantherval", "Grimthor"];
 	
 		//Takes random index out of both firstNames and secondNames
 		let firstRandName = Math.floor(Math.random() * firstNames.length);
@@ -234,9 +234,9 @@ class Character {
     }
 	
 	getMaxHP() {
-		let conatt = 1;
 		//when level is one
-		let HP = this.hitDie + conatt;
+		let HP = this.hitDie + this.makeSkill(this.con);
+		//for every level bigger than 1
 		for (let i = 1; i < this.level; i++){
 			HP += this.hitDie
 		}
@@ -244,6 +244,26 @@ class Character {
 	}
 	
 	getHitDie() {
+		switch(this.charClass) {
+			case "Sorcerer":
+			case "Wizard":
+				return 6;
+				break;
+			case "Bard":
+			case "Cleric":
+			case "Druid":
+			case "Monk":
+			case "Rogue":
+			case "Warlock":
+				return 8;
+				break;
+			case "Barbarian":
+				return 12;
+				break;
+			default:
+				return 8;
+				break;
+		}
 		return 8;
 	}
 	
@@ -280,6 +300,14 @@ function generateCharacter(){
 	document.getElementById("lstINT").innerHTML = "Intelligence: "+character.int;
 	document.getElementById("lstWIS").innerHTML = "Wisdom: "+character.wis;
 	document.getElementById("lstCHA").innerHTML = "Charisma: "+character.cha;
+	
+	document.getElementById("lstProf").innerHTML = "Proficiency: "+character.proficiency;
+	document.getElementById("lstHP").innerHTML = "Hit Points: "+character.HP;
+	document.getElementById("lstHitDie").innerHTML = "Hit Die: d"+character.hitDie;
+	document.getElementById("lstHitDieNumber").innerHTML = "Hit Die: "+character.hitDieNum;
+	document.getElementById("lstSpeed").innerHTML = "Speed: "+character.speed;
+	document.getElementById("lstAC").innerHTML = "Armour Class: "+character.AC;
+	
 
 	document.getElementById("lstSklDexAcr").innerHTML = "Acrobatics (Dex): "+character.acrobatics;
 	document.getElementById("lstSklWisAnm").innerHTML = "Animal Handling (Wis): "+character.animalHandling;
