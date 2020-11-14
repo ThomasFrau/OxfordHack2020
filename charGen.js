@@ -25,23 +25,23 @@ class Character {
 		this.AC = this.getAC();
 		
 		this.acrobatics = this.makeSkill(this.dex);
-        this.animalHandling = this.makeSkill(this.wis);
-        this.arcana = this.makeSkill(this.int);
-        this.athletics = this.makeSkill(this.str);
-        this.deception = this.makeSkill(this.cha);
-        this.history = this.makeSkill(this.int);
-        this.insight = this.makeSkill(this.wis);
-        this.intimidation = this.makeSkill(this.cha);
-        this.investigation = this.makeSkill(this.int);
-        this.medicine = this.makeSkill(this.wis);
-        this.nature = this.makeSkill(this.int);
-        this.perception = this.makeSkill(this.wis);
-        this.performance = this.makeSkill(this.cha);
-        this.persuasion = this.makeSkill(this.cha);
-        this.religion = this.makeSkill(this.int);
-        this.sleight = this.makeSkill(this.dex);
-        this.stealth = this.makeSkill(this.dex);
-        this.survival = this.makeSkill(this.wis); 
+		this.animalHandling = this.makeSkill(this.wis);
+		this.arcana = this.makeSkill(this.int);
+		this.athletics = this.makeSkill(this.str);
+		this.deception = this.makeSkill(this.cha);
+		this.history = this.makeSkill(this.int);
+		this.insight = this.makeSkill(this.wis);
+		this.intimidation = this.makeSkill(this.cha);
+		this.investigation = this.makeSkill(this.int);
+		this.medicine = this.makeSkill(this.wis);
+		this.nature = this.makeSkill(this.int);
+		this.perception = this.makeSkill(this.wis);
+		this.performance = this.makeSkill(this.cha);
+		this.persuasion = this.makeSkill(this.cha);
+		this.religion = this.makeSkill(this.int);
+		this.sleight = this.makeSkill(this.dex);
+		this.stealth = this.makeSkill(this.dex);
+		this.survival = this.makeSkill(this.wis); 
 
 		this.strSaveThrow = this.makeSkill(this.str);
 		this.dexSaveThrow = this.makeSkill(this.dex);
@@ -79,7 +79,7 @@ class Character {
 	{
 		//generates random number
 		let firstNames = ["Adam", "Joe", "Noel", "Anlow", "Bram", "Xandrilla", "Tylsa", "Krynt", "Caskajaro", "Vincent", "Markus", "Remora", "Tura", "Lorelei", "Semil", "Lurtum", "Andujar", "Armagam", "Saxavis", "Tenahn", "Xafiq", "Artana", "Myrka", "Sarcha", "Agaro", "Melgar", "Rozag", "Wolvar", "Tredigar", "Geralt", "Beyla", "Marnia", "Roksana", "Xoneras", "Turue", "Ankhus"];
-        let secondNames = ["Poopy","Amarzian", "Smith", "Frau", "Faringray", "Meklan", "Carnago", "Zeth", "Kazimir", "Incirion", "Dacian", "Archidius", "Xerek", "Tricker", "Skiprock", "Woodenhawk", "Blackwater", "Sunshadow", "Zolerii", "Starfeon", "Zaquivir", "Skalandor", "Lantheon", "Fletcher", "Falck", "Selg", "Varzand", "Webb", "Voortham", "Vrago", "Trevethor", "Lantherval", "Grimthor"];
+		let secondNames = ["Poopy","Amarzian", "Smith", "Frau", "Faringray", "Meklan", "Carnago", "Zeth", "Kazimir", "Incirion", "Dacian", "Archidius", "Xerek", "Tricker", "Skiprock", "Woodenhawk", "Blackwater", "Sunshadow", "Zolerii", "Starfeon", "Zaquivir", "Skalandor", "Lantheon", "Fletcher", "Falck", "Selg", "Varzand", "Webb", "Voortham", "Vrago", "Trevethor", "Lantherval", "Grimthor"];
 	
 		//Takes random index out of both firstNames and secondNames
 		let firstRandName = Math.floor(Math.random() * firstNames.length);
@@ -261,18 +261,18 @@ class Character {
 		return proficiencies;
 	}
 
-	makeSkill(attribute)
-    {
-        if (attribute < 10)
-        {
-            return parseInt((attribute - 11) / 2);
-        }
+	makeSkill(attribute) // Gets Skill Modifier
+	{
+		if (attribute < 10)
+		{
+			return parseInt((attribute - 11) / 2);
+		}
 
-        else
-        {
-            return parseInt((attribute - 10) / 2);
-        }
-    }
+		else
+		{
+			return parseInt((attribute - 10) / 2);
+		}
+	}
 	
 	getMaxHP() {
 		//when level is one
@@ -435,8 +435,49 @@ class Character {
 
 }
 
-function generateCharacter(){
-	let character = new Character();
+let character = new Character();
+function generateCharacter() {
+	character = new Character();
+	displayCharacter(character);
+}
+
+function updateCharacter(character) {
+	character.proficiencies = character.generateProficiencies(character.background, character.charClass);
+	character.hitDie = character.getHitDie();
+	character.hitDieNum = character.getHitDieNum();
+	character.HP = character.getMaxHP();
+	character.proficiency = character.getProficieny();
+	character.acrobatics = character.makeSkill(character.dex);
+	character.animalHandling = character.makeSkill(character.wis);
+	character.arcana = character.makeSkill(character.int);
+	character.athletics = character.makeSkill(character.str);
+	character.deception = character.makeSkill(character.cha);
+	character.history = character.makeSkill(character.int);
+	character.insight = character.makeSkill(character.wis);
+	character.intimidation = character.makeSkill(character.cha);
+	character.investigation = character.makeSkill(character.int);
+	character.medicine = character.makeSkill(character.wis);
+	character.nature = character.makeSkill(character.int);
+	character.perception = character.makeSkill(character.wis);
+	character.performance = character.makeSkill(character.cha);
+	character.persuasion = character.makeSkill(character.cha);
+	character.religion = character.makeSkill(character.int);
+	character.sleight = character.makeSkill(character.dex);
+	character.stealth = character.makeSkill(character.dex);
+	character.survival = character.makeSkill(character.wis); 
+
+	character.strSaveThrow = character.makeSkill(character.str);
+	character.dexSaveThrow = character.makeSkill(character.dex);
+	character.conSaveThrow = character.makeSkill(character.con);
+	character.intSaveThrow = character.makeSkill(character.int);
+	character.wisSaveThrow = character.makeSkill(character.wis);
+	character.chaSaveThrow = character.makeSkill(character.cha);
+	//Update skills if proficient
+	character.addProficiency();
+}
+
+function displayCharacter(character){ // updates HTML of character stats so User can see
+	
 	document.getElementById("lstCharName").innerHTML = "Name: "+character.name;
 	document.getElementById("lstRace").innerHTML = "Race: "+character.race;
 	document.getElementById("lstClass").innerHTML = "Class: "+character.charClass;
@@ -485,6 +526,4 @@ function generateCharacter(){
 	document.getElementById("lstINTsav").innerHTML = "Intelligence: "+character.intSaveThrow;
 	document.getElementById("lstWISsav").innerHTML = "Wisdom: "+character.wisSaveThrow
 	document.getElementById("lstCHAsav").innerHTML = "Charisma: "+character.chaSaveThrow;
-
-
 }
