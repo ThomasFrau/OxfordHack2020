@@ -275,10 +275,25 @@ class Character {
 	}
 	
 	getHitDieNum(){
-		return 3;
+		return this.level;
 	}
 	
 	getProficieny(){
+		if(this.level < 5) {
+			return 2;
+		}
+		else if (this.level < 9) {
+			return 3;
+		}
+		else if (this.level < 13) {
+			return 4;
+		}
+		else if (this.level < 17) {
+			return 5;
+		}
+		else {
+			return 6;
+		}
 		return 2;
 	}
 	
