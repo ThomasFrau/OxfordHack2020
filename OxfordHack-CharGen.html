@@ -16,6 +16,9 @@
 				width: 15%;
 				float: right;
 			}
+			aside button {
+				width: 80%;
+			}
 			.asset {
 				display: none;
 			}
@@ -102,6 +105,8 @@
 		</main>
 		<aside>
 			<button type="button" onclick="generateCharacter();">Generate Character!</button>
+			<button type="button" onclick="changeLevel(1);">Increase Level!</button>
+			<button type="button" onclick="changeLevel(-1);">Decrease Level!</button>
 		</aside>
 		<script src="charGen.js"></script>
 	</body>

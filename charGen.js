@@ -441,6 +441,18 @@ function generateCharacter() {
 	displayCharacter(character);
 }
 
+function changeLevel(mod) {
+	character.level += mod;
+	if (character.level < 1) {
+		character.level = 1;
+	}
+	else if (character.level > 20) {
+		character.level = 20;
+	}
+	updateCharacter(character);
+	displayCharacter(character);
+}
+
 function updateCharacter(character) {
 	character.proficiencies = character.generateProficiencies(character.background, character.charClass);
 	character.hitDie = character.getHitDie();
