@@ -49,6 +49,8 @@ class Character {
 		this.wisSaveThrow = this.makeSkill(this.wis);
 		this.chaSaveThrow = this.makeSkill(this.cha);
 		
+		this.addProficiency();
+		
 	}
 	
 	rollDice(die) {
@@ -220,7 +222,38 @@ class Character {
 		//based on charClass adds a proficiency
 		switch(charClass)
 		{
-			//TODO
+			case "Barbarian":
+			case "Fighter":
+				proficiencies.push("Strength");
+				proficiencies.push("Constitution");
+				break;
+			case "Bard":
+				proficiencies.push("Dexterity");
+				proficiencies.push("Charisma");
+			case "Cleric":
+			case "Paladin":
+			case "Warlock":
+				proficiencies.push("Wisdom");
+				proficiencies.push("Charisma");
+				break;
+			case "Druid":
+			case "Wizard":
+				proficiencies.push("Intelligence");
+				proficiencies.push("Wisdom");
+				break;
+			case "Monk":
+			case "Ranger":
+				proficiencies.push("Strength");
+				proficiencies.push("Dexterity");
+				break;
+			case "Rogue":
+				proficiencies.push("Dexterity");
+				proficiencies.push("Intelligence");
+				break;
+			case "Sorcerer":
+				proficiencies.push("Constitution");
+				proficiencies.push("Charisma");
+				break;
 		}
 
 		//Clear duplicates
@@ -317,7 +350,86 @@ class Character {
 	}
 	
 	getAC(){
-		return 10;
+		return 10 + this.makeSkill(this.dex);
+	}
+	
+	addProficiency(){
+		for(let i = 0; i < this.proficiencies.length; i++) {
+			switch(this.proficiencies[i]){
+				case "Acrobatics":
+					this.acrobatics += this.proficiency;
+					break;
+				case "Animal Handling":
+					this.animalHandling += this.proficiency;
+					break;
+				case "Arcana":
+					this.arcana += this.proficiency;
+					break;
+				case "Athletics":
+					this.athletics += this.proficiency;
+					break;
+				case "Deception":
+					this.deception += this.proficiency;
+					break;
+				case "History":
+					this.history += this.proficiency;
+					break;
+				case "Insight":
+					this.insight += this.proficiency;
+					break;
+				case "Intimidation":
+					this.intimidation += this.proficiency;
+					break;
+				case "Investigation":
+					this.investigation += this.proficiency;
+					break;
+				case "Medicine":
+					this.medicine += this.proficiency;
+					break;
+				case "Nature":
+					this.nature += this.proficiency;
+					break;
+				case "Perception":
+					this.perception += this.proficiency;
+					break;
+				case "Performance":
+					this.performance += this.proficiency;
+					break;
+				case "Persuasion":
+					this.persuasion += this.proficiency;
+					break;
+				case "Religion":
+					this.religion += this.proficiency;
+					break;
+				case "Sleight of Hand":
+					this.sleight += this.proficiency;
+					break;
+				case "Stealth":
+					this.stealth += this.proficiency;
+					break;
+				case "Survival":
+					this.survival += this.proficiency;
+					break;
+				case "Strength":
+					this.strSaveThrow += this.proficiency;
+					break;
+				case "Dexterity":
+					this.dexSaveThrow += this.proficiency;
+					break;
+				case "Constitution":
+					this.conSaveThrow += this.proficiency;
+					break;
+				case "Intelligence":
+					this.intSaveThrow += this.proficiency;
+					break;
+				case "Wisdom":
+					this.wisSaveThrow += this.proficiency;
+					break;
+				case "Charisma":
+					this.chaSaveThrow += this.proficiency;
+					break;
+			}
+		}
 	}
 
 }
