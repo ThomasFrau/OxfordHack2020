@@ -78,7 +78,7 @@ class Character {
 	generateRandomName() // Generates a name
 	{
 		//generates random number
-		let firstNames = ["Adam", "Joe", "Noel", "Anlow", "Bram", "Xandrilla", "Tylsa", "Krynt", "Caskajaro", "Vincent", "Markus", "Remora", "Tura", "Lorelei", "Semil", "Lurtum", "Andujar", "Armagam", "Saxavis", "Tenahn", "Xafiq", "Artana", "Myrka", "Sarcha", "Agaro", "Melgar", "Rozag", "Wolvar", "Tredigar", "Geralt", "Beyla", "Marnia", "Roksana", "Xoneras", "Turue", "Ankhus"];
+		let firstNames = ["Adam", "Joe", "Noel", "Anlow", "Bram", "Xandrilla", "Tylsa", "Krynt", "Caskajaro", "Vincent", "Markus", "Remora", "Tura", "Lorelei", "Semil", "Lurtum", "Andujar", "Armagam", "Saxavis", "Tenahn", "Xafiq", "Artana", "Myrka", "Sarcha", "Agaro", "Melgar", "Rozag", "Wolvar", "Tredigar", "Geralt", "Beyla", "Marnia", "Roksana", "Xoneras", "Turue", "Ankhus","Thomas","Umut","Erik","Gabriel","TH3JU1C3"];
 		let secondNames = ["Poopy","Amarzian", "Smith", "Frau", "Faringray", "Meklan", "Carnago", "Zeth", "Kazimir", "Incirion", "Dacian", "Archidius", "Xerek", "Tricker", "Skiprock", "Woodenhawk", "Blackwater", "Sunshadow", "Zolerii", "Starfeon", "Zaquivir", "Skalandor", "Lantheon", "Fletcher", "Falck", "Selg", "Varzand", "Webb", "Voortham", "Vrago", "Trevethor", "Lantherval", "Grimthor"];
 	
 		//Takes random index out of both firstNames and secondNames
@@ -453,6 +453,13 @@ function changeLevel(mod) {
 	displayCharacter(character);
 }
 
+function changeName() {
+	let name = prompt("Enter a new name");
+	character.name = name;
+	updateCharacter(character);
+	displayCharacter(character);
+}
+
 function updateCharacter(character) {
 	character.proficiencies = character.generateProficiencies(character.background, character.charClass);
 	character.hitDie = character.getHitDie();
@@ -490,7 +497,7 @@ function updateCharacter(character) {
 
 function displayCharacter(character){ // updates HTML of character stats so User can see
 	
-	document.getElementById("lstCharName").innerHTML = "Name: "+character.name;
+	document.getElementById("lstCharName").innerHTML = "Character Name: "+character.name;
 	document.getElementById("lstRace").innerHTML = "Race: "+character.race;
 	document.getElementById("lstClass").innerHTML = "Class: "+character.charClass;
 	document.getElementById("lstLevel").innerHTML = "Level: "+character.level;
