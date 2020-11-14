@@ -8,6 +8,12 @@ class Character {
 		this.level = this.generateLevel();
 		this.alignment = this.generateAlignment();
 		this.proficiencies = this.generateProficiencies(this.background, this.charClass);
+		this.str = makeAttribution();
+		this.dex = makeAttribution();
+		this.con = makeAttribution();
+		this.int = makeAttribution();
+		this.wis = makeAttribution();
+		this.char = makeAttribution();
 	}
 	
 	rollDice(die) {
