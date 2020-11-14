@@ -96,7 +96,7 @@ class Character {
 	generateRace()
 	{
 		//random race selection
-		let races = ["Dragonborn", "Elf", "Dwarf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Human", "Triefling"];
+		let races = ["Dragonborn", "Elf", "Dwarf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Human", "Tiefling"];
 
 		let randomRace = Math.floor(Math.random() * races.length);
 		return races[randomRace];
@@ -298,6 +298,21 @@ class Character {
 	}
 	
 	getSpeed(){
+		switch(this.race) {
+			case "Dwarf":
+			case "Halfling":
+			case "gnome":
+				return 25;
+				break;
+			case "Elf":
+			case "Human":
+			case "Dragonborn":
+			case "Half-Elf":
+			case "Half-Orc":
+			case "Tiefling":
+				return 30;
+				break;
+		}
 		return 25;
 	}
 	
