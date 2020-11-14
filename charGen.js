@@ -13,7 +13,7 @@ class Character {
 		this.con = makeAttribution();
 		this.int = makeAttribution();
 		this.wis = makeAttribution();
-		this.char = makeAttribution();
+		this.cha = makeAttribution();
 	}
 	
 	rollDice(die) {
