@@ -45,11 +45,11 @@ class Item
 
 		let randAdj = Math.floor(Math.random() * adjectives.length);
 		let randType = Math.floor(Math.random() * typesOfTrinkets.length);
-		let randEff = Math.floor(Math.random() * typesOfEffects);
+		let randEff = Math.floor(Math.random() * typesOfEffects.length);
 
 
-		finalItem = finalItem + " " + adjectives[randAdj];
-
+		finalItem = finalItem + " " + adjectives[randAdj] + " " + typesOfTrinkets[randType] + " " + typesOfEffects[randEff];
+		console.log(finalItem);
 		return finalItem;
 	}
 
