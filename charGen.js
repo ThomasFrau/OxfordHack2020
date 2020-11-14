@@ -14,6 +14,20 @@ class Character {
 		return Math.floor(Math.random() * die)+1;
 	}
 
+	makeAttribution()
+	{
+		let rolls = [];
+
+		let i;
+		for (i = 0; i < 4; i++)
+		{
+			rolls.push(rollDice(6));
+		}
+		console.log(rolls);
+		rolls.sort((a,b) => a - b);
+		console.log(rolls;)
+	}
+
 	generateRandomName()
 	{
 		//generates random number
