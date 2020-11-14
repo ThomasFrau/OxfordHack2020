@@ -28,7 +28,7 @@ class Character {
 		let classes = ["Cleric", "Sorcerer", "Barbarian", "Bard", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Warlock", "Wizard"];
 
 		let randomClass = Math.floor(Math.random() * classes.length);
-		return randomClass;
+		return classes[randomClass];
 	}
 
 	generateRace()
@@ -37,7 +37,7 @@ class Character {
 		let races = ["Dragonborn", "Elf", "Dwarf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Human", "Triefling"];
 
 		let randomRace = Math.floor(Math.random() * races.length);
-		return randomRace;
+		return races[randomRace];
 	}
 
 	generateBackround()
