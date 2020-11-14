@@ -23,7 +23,24 @@ class Character {
 		this.speed = this.getSpeed();
 		this.AC = this.getAC();
 		
-		
+		this.acrobatics = this.makeSkill(this.dex);
+        this.animalHandling = this.makeSkill(this.wis);
+        this.arcana = this.makeSkill(this.int);
+        this.athletics = this.makeSkill(this.str);
+        this.deception = this.makeSkill(this.cha);
+        this.history = this.makeSkill(this.int);
+        this.isight = this.makeSkill(this.wis);
+        this.intimidation = this.makeSkill(this.cha);
+        this.investigation = this.makeSkill(this.int);
+        this.medicine = this.makeSkill(this.wis);
+        this.nature = this.makeSkill(this.int);
+        this.perception = this.makeSkill(this.wis);
+        this.performance = this.makeSkill(this.cha);
+        this.persuasion = this.makeSkill(this.cha);
+        this.religion = this.makeSkill(this.int);
+        this.sleight = this.makeSkill(this.dex);
+        this.stealth = this.makeSkill(this.dex);
+        this.survival = this.makeSkill(this.wis); 
 		
 	}
 	
@@ -202,6 +219,20 @@ class Character {
 		//Clear duplicates
 		return proficiencies;
 	}
+
+	makeSkill(attribute)
+    {
+        if (attribute < 10)
+        {
+            return parseInt((attribute - 11) / 2);
+        }
+
+        else
+        {
+            return parseInt((attribute - 10) / 2);
+        }
+    }
+	
 	getMaxHP() {
 		let conatt = 1;
 		//when level is one
