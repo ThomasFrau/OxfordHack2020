@@ -10,6 +10,6 @@ temp.src = "Assets/tileSet/tileset.png";
 function TestFunction()
 {
 	context.drawImage(temp, 0, 0);
-	
+	console.log(mapArray);
 }
 
