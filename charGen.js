@@ -75,83 +75,83 @@ class Character {
 		switch(backround)
 		{
 			case "Acolyte":
-				proficiencies.append("Insight");
-				proficiencies.append("Religion");
+				proficiencies.push("Insight");
+				proficiencies.push("Religion");
 				break;
 
 			case "Charlatan":
-				proficiencies.append("Deception");
-				proficiencies.append("Sleight of Hand");
+				proficiencies.push("Deception");
+				proficiencies.push("Sleight of Hand");
 				break;
 
 			case "Criminal":
-				proficiencies.append("Deception");
-				proficiencies.append("Stealth");
+				proficiencies.push("Deception");
+				proficiencies.push("Stealth");
 				break;
 
 			case "Entertainer":
-				proficiencies.append("Acrobatics");
-				proficiencies.append("Performance");
+				proficiencies.push("Acrobatics");
+				proficiencies.push("Performance");
 				break;
 
 			case "Folk Hero":
-				proficiencies.append("Animal Handling");
-				proficiencies.append("Survival");
+				proficiencies.push("Animal Handling");
+				proficiencies.push("Survival");
 				break;
 
 			case "Gladiator":
-				proficiencies.append("Acrobatics");
-				proficiencies.append("Performance");
+				proficiencies.push("Acrobatics");
+				proficiencies.push("Performance");
 				break;
 
 			case "Guild Artisan":
-				proficiencies.append("Insight");
-				proficiencies.append("Persuasion");
+				proficiencies.push("Insight");
+				proficiencies.push("Persuasion");
 				break;
 
 			case "Hermit":
-				proficiencies.append("Medicine");
-				proficiencies.append("Religion");
+				proficiencies.push("Medicine");
+				proficiencies.push("Religion");
 				break;
 
 			case "Knight":
-				proficiencies.append("History");
-				proficiencies.append("Persuasion");
+				proficiencies.push("History");
+				proficiencies.push("Persuasion");
 				break;
 
 			case "Noble":
-				proficiencies.append("History");
-				proficiencies.append("Persuasion");
+				proficiencies.push("History");
+				proficiencies.push("Persuasion");
 				break;
 
 			case "Outlander":
-				proficiencies.append("Athletics");
-				proficiencies.append("Survival");
+				proficiencies.push("Athletics");
+				proficiencies.push("Survival");
 				break;
 
 			case "Pirate":
-				proficiencies.append("Athletics");
-				proficiencies.append("Perception");
+				proficiencies.push("Athletics");
+				proficiencies.push("Perception");
 				break;
 
 			case "Sage":
-				proficiencies.append("Arcana");
-				proficiencies.append("History");
+				proficiencies.push("Arcana");
+				proficiencies.push("History");
 				break;
 
 			case "Sailor":
-				proficiencies.append("Athletics");
-				proficiencies.append("Perception");
+				proficiencies.push("Athletics");
+				proficiencies.push("Perception");
 				break;
 
 			case "Soldier":
-				proficiencies.append("Athletics");
-				proficiencies.append("Intimidation");
+				proficiencies.push("Athletics");
+				proficiencies.push("Intimidation");
 				break;
 
 			case "Urchin":
-				proficiencies.append("Sleight of Hand");
-				proficiencies.append("Stealth");
+				proficiencies.push("Sleight of Hand");
+				proficiencies.push("Stealth");
 				break;
 		}
 
