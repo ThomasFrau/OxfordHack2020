@@ -19,6 +19,9 @@
 			aside button {
 				width: 80%;
 			}
+			aside button.half {
+				width: 39%;
+			}
 			.asset {
 				display: none;
 			}
@@ -106,8 +109,20 @@
 		<aside>
 			<button type="button" onclick="generateCharacter();">Generate Character!</button>
 			<button type="button" onclick="changeName();">Change Name!</button>
-			<button type="button" onclick="changeLevel(1);">Increase Level!</button>
-			<button type="button" onclick="changeLevel(-1);">Decrease Level!</button>
+			<button class="half" type="button" onclick="changeLevel(1);">Increase Level!</button>
+			<button class="half" type="button" onclick="changeLevel(-1);">Decrease Level!</button>
+			<button class="half" type="button" onclick="changeAttribute(1,'Str');">Increase Strength!</button>
+			<button class="half" type="button" onclick="changeAttribute(-1,'Str');">Decrease Strength!</button>
+			<button class="half" type="button" onclick="changeAttribute(1,'Dex');">Increase Dexterity!</button>
+			<button class="half" type="button" onclick="changeAttribute(-1,'Dex');">Decrease Dexterity!</button>
+			<button class="half" type="button" onclick="changeAttribute(1,'Con');">Increase Constitution!</button>
+			<button class="half" type="button" onclick="changeAttribute(-1,'Con');">Decrease Constitution!</button>
+			<button class="half" type="button" onclick="changeAttribute(1,'Int');">Increase Intelligence!</button>
+			<button class="half" type="button" onclick="changeAttribute(-1,'Int');">Decrease Intelligence!</button>
+			<button class="half" type="button" onclick="changeAttribute(1,'Wis');">Increase Wisdom!</button>
+			<button class="half" type="button" onclick="changeAttribute(-1,'Wis');">Decrease Wisdom!</button>
+			<button class="half" type="button" onclick="changeAttribute(1,'Cha');">Increase Charisma!</button>
+			<button class="half" type="button" onclick="changeAttribute(-1,'Cha');">Decrease Charisma!</button>
 		</aside>
 		<script src="charGen.js"></script>
 	</body>

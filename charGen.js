@@ -453,6 +453,43 @@ function changeLevel(mod) {
 	displayCharacter(character);
 }
 
+function changeAttribute(mod,att) {
+	switch(att) {
+		case "Str":
+			character.str += mod;
+			if (character.str < 1) { character.str = 1; }
+			else if (character.str > 20) { character.str = 20; }
+			break;
+		case "Dex":
+			character.dex += mod;
+			if (character.dex < 1) { character.dex = 1; }
+			else if (character.dex > 20) { character.dex = 20; }
+			break;
+		case "Con":
+			character.con += mod;
+			if (character.con < 1) { character.con = 1; }
+			else if (character.con > 20) { character.con = 20; }
+			break;
+		case "Int":
+			character.int += mod;
+			if (character.int < 1) { character.int = 1; }
+			else if (character.int > 20) { character.int = 20; }
+			break;
+		case "Wis":
+			character.wis += mod;
+			if (character.wis < 1) { character.wis = 1; }
+			else if (character.wis > 20) { character.wis = 20; }
+			break;
+		case "Cha":
+			character.cha += mod;
+			if (character.cha < 1) { character.cha = 1; }
+			else if (character.cha > 20) { character.cha = 20; }
+			break;
+	}
+	updateCharacter(character);
+	displayCharacter(character);
+}
+
 function changeName() {
 	let name = prompt("Enter a new name");
 	character.name = name;
@@ -493,6 +530,7 @@ function updateCharacter(character) {
 	character.chaSaveThrow = character.makeSkill(character.cha);
 	//Update skills if proficient
 	character.addProficiency();
+	character.AC = character.getAC();
 }
 
 function displayCharacter(character){ // updates HTML of character stats so User can see
