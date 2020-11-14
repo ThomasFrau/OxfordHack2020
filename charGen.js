@@ -25,7 +25,7 @@ class Character {
 		}
 		console.log(rolls);
 		rolls.sort((a,b) => a - b);
-		console.log(rolls;)
+		console.log(rolls);
 	}
 
 	generateRandomName()
