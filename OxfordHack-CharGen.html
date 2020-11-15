@@ -110,6 +110,8 @@
 			<button class="half" type="button" onclick="changeAttribute(1,'Cha');">Increase <br>Charisma</button>
 			<button class="half" type="button" onclick="changeAttribute(-1,'Cha');">Decrease <br>Charisma</button>
 			<button type="button" onclick="dlCharacterJSON();">Download Character!</button>
+			<input  type="file" id="uploader" value="Import" accept="application/json" />
+			<button type="button" onclick="uplCharacterJSON();">Upload Character</button>
 		</aside>
 		<a id="downloadAnchorElem" style="display:none"></a>
 		<script src="charGen.js"></script>
