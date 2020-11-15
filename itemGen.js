@@ -187,17 +187,9 @@ function generateTrinket() {
 
 	document.getElementById("Item").innerHTML = item.item + ".";
 	document.getElementById("lstWeight").innerHTML = "Weight is: " + item.stats[0];
-	if (item.type == "Weapon") {
-		let changingElement = document.getElementById("lstDam");
-		changingElement.innerHTML = "Damage is: " + item.stats[1];
-		changingElement.setAttribute("class", "notHidden");
-	}
-	else if (item.type == "Armour") {
-		let changingElement = document.getElementById("lstArm");
-		changingElement.innerHTML = "AC is: " + item.stats[1];
-		changingElement.setAttribute("class", "notHidden");
-	}
-
+	
+	document.getElementById("lstDam").setAttribute("class", "hidden");
+	document.getElementById("lstArm").setAttribute("class", "hidden");
 }
 
 function generateWeapon() {
@@ -205,17 +197,10 @@ function generateWeapon() {
 
 	document.getElementById("Item").innerHTML = item.item + ".";
 	document.getElementById("lstWeight").innerHTML = "Weight is: " + item.stats[0];
-	if (item.type == "Weapon") {
-		let changingElement = document.getElementById("lstDam");
-		changingElement.innerHTML = "Damage is: " + item.stats[1];
-		changingElement.setAttribute("class", "notHidden");
-	}
-	else if (item.type == "Armour") {
-		let changingElement = document.getElementById("lstArm");
-		changingElement.innerHTML = "AC is: " + item.stats[1];
-		changingElement.setAttribute("class", "notHidden");
-	}
-
+	
+	document.getElementById("lstDam").innerHTML = "Damage is: " + item.stats[1];
+	document.getElementById("lstDam").setAttribute("class", "notHidden");
+	document.getElementById("lstArm").setAttribute("class", "hidden");
 }
 
 function generateArmour() {
@@ -223,16 +208,10 @@ function generateArmour() {
 
 	document.getElementById("Item").innerHTML = item.item + ".";
 	document.getElementById("lstWeight").innerHTML = "Weight is: " + item.stats[0];
-	if (item.type == "Weapon") {
-		let changingElement = document.getElementById("lstDam");
-		changingElement.innerHTML = "Damage is: " + item.stats[1];
-		changingElement.setAttribute("class", "notHidden");
-	}
-	else if (item.type == "Armour") {
-		let changingElement = document.getElementById("lstArm");
-		changingElement.innerHTML = "AC is: " + item.stats[1];
-		changingElement.setAttribute("class", "notHidden");
-	}
+
+	document.getElementById("lstArm").innerHTML = "AC is: " + item.stats[1];
+	document.getElementById("lstArm").setAttribute("class", "notHidden");
+	document.getElementById("lstDam").setAttribute("class", "hidden");
 
 }
 
@@ -241,15 +220,6 @@ function generateFood() {
 
 	document.getElementById("Item").innerHTML = item.item + ".";
 	document.getElementById("lstWeight").innerHTML = "Weight is: " + item.stats[0];
-	if (item.type == "Weapon") {
-		let changingElement = document.getElementById("lstDam");
-		changingElement.innerHTML = "Damage is: " + item.stats[1];
-		changingElement.setAttribute("class", "notHidden");
-	}
-	else if (item.type == "Armour") {
-		let changingElement = document.getElementById("lstArm");
-		changingElement.innerHTML = "AC is: " + item.stats[1];
-		changingElement.setAttribute("class", "notHidden");
-	}
-
+	document.getElementById("lstDam").setAttribute("class", "hidden");
+	document.getElementById("lstArm").setAttribute("class", "hidden");
 }
