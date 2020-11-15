@@ -435,7 +435,24 @@ class Character {
 
 }
 
+class Jayson { // Where is my Jay Son
+	constructor(charac) {
+		this.charac = charac;
+		this.JSN = this.jSONData();
+	}
+	
+	jSONData() {
+		let stringed = JSON.stringify(this.charac);
+		return JSON.parse(stringed);
+	}
+}
+
 let character = new Character();
+
+function xxx() {
+	newWindow = window.open(escape(character));
+}
+
 function generateCharacter() {
 	character = new Character();
 	displayCharacter(character);
