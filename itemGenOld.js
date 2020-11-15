@@ -1,43 +1,38 @@
 var adjectives = ["Seductive", "Dank", "Golden", "Silver", "Small", "Big", "Tiny", "Gigantic", "Heavy", "Light", "Diamond", "Wooden", "Expensive", "Cheap", "Dirty", "Used", "Brand-new", "Broken", "Exotic", "Powerful", "Burning", "Wireless", "Invisible", "Cringey", "Clean", "Creepy", "Useless", "German-made"];
 
 
-class Item {
-	constructor(type) {
+class Item
+{
+	constructor()
+	{
+		this.stats =[];
+		this.type;
+		this.item = this.createItem();
+		
 
-		if (type != null && type != "") {
-			this.stats = [];
-			this.type = type;
-			this.item = this.createItem(this.type);
-		}
-		else
-		{
-			this.stats = [];
-			this.type;
-			this.item = this.createItem(0);
-        }
-		
-		
+
+		//setting for making specific type of item, maybe not most effective, can not be bothered atm
+		/*
+		this.trinket = this.makeTrinket();
+		this.weapon = this.makeWeapon();
+		this.armour = this.makeArmour();
+		*/
 	}
 
 	//all of the possible adjectives for each item besides food (maybe for food as well)
 
-	createItem(typeIn) {
+	createItem()
+	{
 		let typeOfItem = ["Trinket", "Weapon", "Armour", "Food"];
-		let itemTomake;
+		let itemTomake = Math.floor(Math.random() * typeOfItem.length);
 
-		if (typeIn == 0) {
-			itemTomake = Math.floor(Math.random() * typeOfItem.length);
-			this.typeIn = typeOfItem[itemTomake];
-			this.type = typeOfItem[itemTomake];
-		}
-		else
+		this.type = typeOfItem[itemTomake];
+		this.createStats(typeOfItem[itemTomake]);
+
+		console.log(this.stats);
+
+		switch(typeOfItem[itemTomake])
 		{
-			this.typeIn = typeIn;
-        }
-
-		this.createStats(this.typeIn);
-
-		switch (this.typeIn) {
 			case "Trinket":
 				return this.makeTrinket();
 				break;
@@ -56,28 +51,32 @@ class Item {
 		}
 	}
 
-	createStats(item) {
+	createStats(item)
+	{
 		//could make a second method for this, however it would probably require more case statements
-		switch (item) {
-			case "Trinket":
-				this.stats.push(this.randomWeight(10));
-				break;
-			case "Weapon":
-				this.stats.push(this.randomWeight(20));
-				this.stats.push(this.makeDamage());
-				break;
-			case "Armour":
-				this.stats.push(this.randomWeight(30));
-				this.stats.push(Math.floor(Math.random() * 5) + 10);
-				break;
-			case "Food":
-				this.stats.push(this.randomWeight(3));
-				break;
-		}
+		console.log(item);
+			switch(item)
+			{
+				case "Trinket":
+					this.stats.push(this.randomWeight(10));
+					break;
+				case "Weapon":
+					this.stats.push(this.randomWeight(20));
+					this.stats.push(this.makeDamage());
+					break;
+				case "Armour":
+					this.stats.push(this.randomWeight(30));
+					this.stats.push(Math.floor(Math.random() * 5) + 10);
+					break;
+				case "Food":
+					this.stats.push(this.randomWeight(3));
+					break;
+			}
 	}
 
 
-	makeDamage() {
+	makeDamage()
+	{
 		let finalDamage = "";
 		let sidesOfDice = ["d4", "d6", "d12", "d20"];
 		let amountOfThrows = Math.floor(Math.random() * 6);
@@ -87,14 +86,16 @@ class Item {
 
 		finalDamage = randThrow + sidesOfDice[randSide];
 		return finalDamage;
-	}
+    }
 
 	//returns random weight based by given max value
-	randomWeight(maxi) {
+	randomWeight(maxi)
+	{
 		return (Math.floor(Math.random() * maxi));
 	}
 
-	makeTrinket() {
+	makeTrinket()
+	{
 
 		//add more typesOfEffects, needs more funny ones
 		//takes random positions from typesOfTrinkets and typesOfEffects and concats them into one string
@@ -113,26 +114,28 @@ class Item {
 		return finalItem;
 	}
 
-	makeWeapon() {
-
+	makeWeapon()
+	{
+		
 		//attack bonus implement later
 		//figure out dictonaries and type it all into it 
 
 		let finalItem = '';
 
-		let typesOfWeapons = ["hidden blade", "chainsword", "whip", "dagger", "flail", "door", "sword", "axe", "bow", "shovel", "spear", "automatic rifle", "crossbow", "shortsword", "katana", "pike", "dead fish", "briefcase", "sack of doorknobs", "staff"];
+		let typesOfWeapons = ["hidden blade", "chainsword", "whip", "dagger", "flail", "door", "sword", "axe", "bow", "shovel", "spear", "automatic rifle", "crossbow", "shortsword", "katana", "pike", "dead fish", "briefcase", "sack of doorknobs", "staff"]; 
 		let typesOfDamage = ["with fire damage", "with blunt damage", "with piercing damage", "with bludgeoning damage", "with cold damage", "with poison damage", "with acid damage", "with psychic damage", "with necrotic damage", "with radiant damage", "with force damage", "with thunder damage", "with lightning damage"];
-
+		
 		let randAdj = Math.floor(Math.random() * adjectives.length);
 		let randWep = Math.floor(Math.random() * typesOfWeapons.length);
 		let randDmg = Math.floor(Math.random() * typesOfDamage.length);
 
 
 		finalItem = adjectives[randAdj] + " " + typesOfWeapons[randWep] + " " + typesOfDamage[randDmg];
-		return finalItem;
+		return finalItem;	
 	}
 
-	makeArmour() {
+	makeArmour()
+	{
 		let finalItem = '';
 
 		let typesOfArmour = ["splint", "half plate", "hide", "hood", "clogs", "underwear", "shirt", "t-shirt", "trousers", "breastplate", "sliders", "boots", "helmet", "tin-foil hat", "gloves", "gauntlets", "greaves", "sunglasses", "cloak", "veil", "robe", "chainveil armour"];
@@ -146,7 +149,8 @@ class Item {
 		return finalItem;
 	}
 
-	makeFood() {
+	makeFood()
+	{
 		let finalItem = '';
 
 		let foodAdjectives = ["Poisoned", "Chewy", "Burnt", "Acidic", "Scrumptious", "Sour", "Greasy", "Moldy", "Stale", "Suspiciously gray", "Fresh", "Wet", "Dry", "Crunchy", "Rotten", "Stale", "Garlic", "Salty", "Sweet", "Cheesy", "Kosher", "Halal", "Deep-fried", "Plain", "Succulent", "Tangy", "Crommulent", "Appetising", "Embiggening"];
@@ -164,8 +168,11 @@ class Item {
 	}
 }
 
-function generateItem() {
-	let item = new Item("");
+function generateItem()
+{
+	let item = new Item();
+
+	//probably can be done via accesing only one method from class Item(), for now item.makeTrinket() will have to be good enough
 
 	document.getElementById("Item").innerHTML = item.item + ".";
 	document.getElementById("lstWeight").innerHTML = "Weight is: " + item.stats[0];
@@ -173,83 +180,17 @@ function generateItem() {
 		let changingElement = document.getElementById("lstDam");
 		changingElement.innerHTML = "Damage is: " + item.stats[1];
 		changingElement.setAttribute("class", "notHidden");
+		let otherElement = document.getElementById("lstArm");
+		otherElement.innerHTML = "AC is: ";
+		otherElement.setAttribute("class", "hidden");
 	}
 	else if (item.type == "Armour") {
 		let changingElement = document.getElementById("lstArm");
 		changingElement.innerHTML = "AC is: " + item.stats[1];
 		changingElement.setAttribute("class", "notHidden");
-	}
-
-}
-
-function generateTrinket() {
-	let item = new Item("Trinket");
-
-	document.getElementById("Item").innerHTML = item.item + ".";
-	document.getElementById("lstWeight").innerHTML = "Weight is: " + item.stats[0];
-	if (item.type == "Weapon") {
-		let changingElement = document.getElementById("lstDam");
-		changingElement.innerHTML = "Damage is: " + item.stats[1];
-		changingElement.setAttribute("class", "notHidden");
-	}
-	else if (item.type == "Armour") {
-		let changingElement = document.getElementById("lstArm");
-		changingElement.innerHTML = "AC is: " + item.stats[1];
-		changingElement.setAttribute("class", "notHidden");
-	}
-
-}
-
-function generateWeapon() {
-	let item = new Item("Weapon");
-
-	document.getElementById("Item").innerHTML = item.item + ".";
-	document.getElementById("lstWeight").innerHTML = "Weight is: " + item.stats[0];
-	if (item.type == "Weapon") {
-		let changingElement = document.getElementById("lstDam");
-		changingElement.innerHTML = "Damage is: " + item.stats[1];
-		changingElement.setAttribute("class", "notHidden");
-	}
-	else if (item.type == "Armour") {
-		let changingElement = document.getElementById("lstArm");
-		changingElement.innerHTML = "AC is: " + item.stats[1];
-		changingElement.setAttribute("class", "notHidden");
-	}
-
-}
-
-function generateArmour() {
-	let item = new Item("Armour");
-
-	document.getElementById("Item").innerHTML = item.item + ".";
-	document.getElementById("lstWeight").innerHTML = "Weight is: " + item.stats[0];
-	if (item.type == "Weapon") {
-		let changingElement = document.getElementById("lstDam");
-		changingElement.innerHTML = "Damage is: " + item.stats[1];
-		changingElement.setAttribute("class", "notHidden");
-	}
-	else if (item.type == "Armour") {
-		let changingElement = document.getElementById("lstArm");
-		changingElement.innerHTML = "AC is: " + item.stats[1];
-		changingElement.setAttribute("class", "notHidden");
-	}
-
-}
-
-function generateFood() {
-	let item = new Item("Food");
-
-	document.getElementById("Item").innerHTML = item.item + ".";
-	document.getElementById("lstWeight").innerHTML = "Weight is: " + item.stats[0];
-	if (item.type == "Weapon") {
-		let changingElement = document.getElementById("lstDam");
-		changingElement.innerHTML = "Damage is: " + item.stats[1];
-		changingElement.setAttribute("class", "notHidden");
-	}
-	else if (item.type == "Armour") {
-		let changingElement = document.getElementById("lstArm");
-		changingElement.innerHTML = "AC is: " + item.stats[1];
-		changingElement.setAttribute("class", "notHidden");
+		let otherElement = document.getElementById("lstDam");
+		otherElement.innerHTML = "Damage is: ";
+		otherElement.setAttribute("class", "notHidden");
 	}
 
 }
