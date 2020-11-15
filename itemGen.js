@@ -1,4 +1,4 @@
-var adjectives = ["Boomerang-shaped", "Rhombus-shaped", "Circular", "Glass", "Seductive", "Dank", "Golden", "Silver", "Small", "Big", "Tiny", "Gigantic", "Heavy", "Light", "Diamond", "Wooden", "Expensive", "Cheap", "Dirty", "Used", "Brand-new", "Broken", "Exotic", "Powerful", "Burning", "Wireless", "Invisible", "Cringey", "Clean", "Creepy", "Useless", "German-made"];
+var adjectives = ["Shrunken", "Red", "Holy", "Brass", "Dead", "Boomerang-shaped", "Rhombus-shaped", "Circular", "Glass", "Seductive", "Dank", "Golden", "Silver", "Small", "Big", "Tiny", "Gigantic", "Heavy", "Light", "Diamond", "Wooden", "Expensive", "Cheap", "Dirty", "Used", "Brand-new", "Broken", "Exotic", "Powerful", "Burning", "Wireless", "Invisible", "Cringey", "Clean", "Creepy", "Useless", "German-made"];
 
 
 class Item {
@@ -99,7 +99,7 @@ class Item {
 		//add more typesOfEffects, needs more funny ones
 		//takes random positions from typesOfTrinkets and typesOfEffects and concats them into one string
 		let finalItem = '';
-		let typesOfTrinkets = ["vape pen", "dreamcatcher", "rubber duck", "cigarettes", "amulet", "ring", "tooth", "earring", "spoon", "mirror", "cup", "hairbrush", "doorknob", "book", "eye", "deck of cards", "bag of dice", "keychain"];
+		let typesOfTrinkets = ["statue", "feather", "finger bone", "casket", "spirit", "rod", "small fan", "symbol", "whistle", "vape pen", "dreamcatcher", "rubber duck", "cigarettes", "amulet", "ring", "tooth", "earring", "spoon", "mirror", "cup", "hairbrush", "doorknob", "book", "eye", "deck of cards", "bag of dice", "keychain"];
 		let typesOfEffects = ["allows you to speak any language you wish", "makes you instantly cool", "never gets lost", "gives you the ability to see in the night", "that opens any door you wish", "never gets dirty", "dimly glows any colour you want it to", "gives you teleportation skills", "makes you laugh constantly", "turns you invisible", "makes you go mad", "turns you into a wolf", "allows you to hear to demons", "turns you into a pickle", "makes you really hungry all the time", "you can't take off", "makes you forget", "allows the demons to speak back", "makes you psychic", "makes you addicted to garlic bread"];
 
 		let randAdj = Math.floor(Math.random() * adjectives.length);
@@ -120,7 +120,7 @@ class Item {
 
 		let finalItem = '';
 
-		let typesOfWeapons = ["hidden blade", "chainsword", "whip", "dagger", "flail", "door", "sword", "axe", "bow", "shovel", "spear", "automatic rifle", "crossbow", "shortsword", "katana", "pike", "dead fish", "briefcase", "sack of doorknobs", "staff"];
+		let typesOfWeapons = ["rocket launcher", "ring sword", "halberd", "shuriken", "knife", "hidden blade", "chainsword", "whip", "dagger", "flail", "door", "sword", "axe", "bow", "shovel", "spear", "automatic rifle", "crossbow", "shortsword", "katana", "pike", "dead fish", "briefcase", "sack of doorknobs", "staff"];
 		let typesOfDamage = ["with fire damage", "with blunt damage", "with piercing damage", "with bludgeoning damage", "with cold damage", "with poison damage", "with acid damage", "with psychic damage", "with necrotic damage", "with radiant damage", "with force damage", "with thunder damage", "with lightning damage"];
 
 		let randAdj = Math.floor(Math.random() * adjectives.length);
@@ -136,7 +136,7 @@ class Item {
 		let finalItem = '';
 
 		let typesOfArmour = ["splint", "half plate", "hide", "hood", "clogs", "underwear", "shirt", "t-shirt", "trousers", "breastplate", "sliders", "boots", "helmet", "tin-foil hat", "gloves", "gauntlets", "greaves", "sunglasses", "cloak", "veil", "robe", "chainveil armour"];
-		let typesOfProtection = ["with protection from germans", "with protection from goblins", "with protection from zombies", "with protection from fire", "with protection from ice", "with protection from dragons", "with protection from monkeys", "with protection from devils", "with protection from demons", "that make you slightly uncomfortable", "that gives you a lot of confidence", "that minimise your confidence", "that makes you look funny"];
+		let typesOfProtection = ["makes you very fast", "regenerates you slowly overnight", "with protection from germans", "with protection from goblins", "with protection from zombies", "with protection from fire", "with protection from ice", "with protection from dragons", "with protection from monkeys", "with protection from devils", "with protection from demons", "that make you slightly uncomfortable", "that gives you a lot of confidence", "that minimise your confidence", "that makes you look funny"];
 
 		let randAdj = Math.floor(Math.random() * adjectives.length);
 		let randArmour = Math.floor(Math.random() * typesOfArmour.length);
@@ -150,7 +150,7 @@ class Item {
 		let finalItem = '';
 
 		let foodAdjectives = ["Poisoned", "Chewy", "Burnt", "Acidic", "Scrumptious", "Sour", "Greasy", "Moldy", "Stale", "Suspiciously gray", "Fresh", "Wet", "Dry", "Crunchy", "Rotten", "Stale", "Garlic", "Salty", "Sweet", "Cheesy", "Kosher", "Halal", "Deep-fried", "Plain", "Succulent", "Tangy", "Crommulent", "Appetising", "Embiggening"];
-		let foods = ["bread", "pizza", "soup", "baguette", "steak", "kebab", "rice", "cake", "eggs", "ham", "honey", "chicken", "turkey", "fish", "fungi", "burrito", "curry", "duck", "gnocchi", "hamburger", "jerky", "quiche", "yogurt", "zucchini", "tangerine", "oatmeal", "urchins"];
+		let foods = ["bread", "pizza", "soup", "baguette", "steak", "kebab", "rice", "cake", "egg", "ham", "honey", "chicken", "turkey", "fish", "fungi", "burrito", "curry", "duck", "gnocchi", "hamburger", "jerky", "quiche", "yogurt", "zucchini", "tangerine", "oatmeal", "urchins"];
 		let foodAttributes = ["looks very delicious", "looks very suspicious", "tastes poorly", "is moving around slightly", "is uncomfortably large", "is very tiny", "tastes like chicken", "is poisoned", "looks like it is poisoned"];
 
 		let randFoodAdj = Math.floor(Math.random() * foodAdjectives.length);
