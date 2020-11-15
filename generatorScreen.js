@@ -4,6 +4,8 @@ const canvas = document.getElementById("generatorScreen");
 const context = canvas.getContext("2d");
 const downloadButton = document.getElementById("downloadButton");
 
+let mapArray = genMap();
+
 let tiles = new Image();
 
 tiles.src = "Assets/tileSet/tileset.png";
@@ -15,15 +17,18 @@ function TestFunction()
 
 function DisplayMap()
 {
+    console.log(mapArray);
+
     for (let y = 0; y < mapArray.length; y++)
     {
         for (let x = 0; x < mapArray.length; x++)
         {
-            if (grassArray[x][y] == 0) {
+            context.drawImage(tiles, 16 * CalculateTile(x, y), 0, 16, 16, 16 * x, 16 * y, 16, 16);
+            /*if (grassArray[x][y] == 0) {
                 context.drawImage(tiles, 16 * CalculateTile(x, y), 0, 16, 16, 16 * x, 16 * y, 16, 16);
             } else {
-                context.drawImage(tiles, 16 * CalculateTile(x, y), 0 /*Change to 16 for fancy grass*/, 16, 16, 16 * x, 16 * y, 16, 16);
-            }
+                context.drawImage(tiles, 16 * CalculateTile(x, y), 0 , 16, 16, 16 * x, 16 * y, 16, 16);
+            }*/
         }
     }
 }
