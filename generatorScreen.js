@@ -145,7 +145,7 @@ function CalculateTile(x,y)
                         if (v[5] == 2 || v[5] == 5) {
                             return 126;
                         } else {
-                            return 0;
+                            return 1;
                         }
                     }
                 }
