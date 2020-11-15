@@ -47,6 +47,7 @@ function CalculateTile(x,y)
             return 0;      
         case 4:         //paths
             //v[0] != 4 && v[1] != 4 && v[2] != 4 && v[3] == 4 && v[5] == 4 && v[6] != 4 && v[7] != 4 && v[8] != 4
+<<<<<<< Updated upstream
 
             if (v[1] == 4 || v[1] == 5) {
                 if (v[7] == 4 || v[7] == 5) {
@@ -203,6 +204,109 @@ function CalculateTile(x,y)
                     }
                 }
             }     
+=======
+
+            if (v[1] == 4 || v[1] == 5) {
+                if (v[7] == 4 || v[7] == 5) {
+                    if (v[3] == 4 || v[3] == 5) {
+                        if (v[5] == 4 || v[5] == 5) {
+                            return 60;
+                        } else {
+                            return 61;
+                        }
+                    } else {
+                        if (v[5] == 4 || v[5] == 5) {
+                            return 59;
+                        } else {
+                            return 54;
+                        }
+                    }
+                } else {
+                    if (v[3] == 4 || v[3] == 5) {
+                        if (v[5] == 4 || v[5] == 5) {
+                            return 63;
+                        } else {
+                            return 64;
+                        }
+                    } else {
+                        if (v[5] == 4 || v[5] == 5) {
+                            return 62;
+                        } else {
+                            return 55;
+                        }
+                    }
+                }
+            } else {
+                if (v[7] == 4 || v[7] == 5) {
+                    if (v[3] == 4 || v[3] == 5) {
+                        if (v[5] == 4 || v[5] == 5) {
+                            return 57;
+                        } else {
+                            return 58;
+                        }
+                    } else {
+                        if (v[5] == 4 || v[5] == 5) {
+                            return 56;
+                        } else {
+                            return 53;
+                        }
+                    }
+                } else {
+                    if (v[3] == 4 || v[3] == 5) {
+                        if (v[5] == 4 || v[5] == 5) {
+                            return 51;
+                        } else {
+                            return 52;
+                        }
+                    } else {
+                        if (v[5] == 4 || v[5] == 5) {
+                            return 50;
+                        } else {
+                            return 83;
+                        }
+                    }
+                }
+            }
+
+
+
+
+            /*if (v[1] != 4 && v[3] != 4 && v[5] == 4 && v[7] != 4) {
+                return 50;
+            } else if (v[1] != 4 && v[3] == 4 && v[5] == 4 && v[7] != 4) {
+                return 51;
+            } else if (v[1] != 4 && v[3] == 4 && v[5] != 4 && v[7] != 4) {
+                return 52;
+            } else if (v[1] != 4 && v[3] != 4 && v[5] != 4 && v[7] == 4) {
+                return 53;
+            } else if (v[1] == 4 && v[3] != 4 && v[5] != 4 && v[7] == 4) {
+                return 54;
+            } else if (v[1] == 4 && v[3] != 4 && v[5] != 4 && v[7] != 4) {
+                return 55;
+            } else if (v[1] != 4 && v[3] != 4 && v[5] == 4 && v[7] == 4) {
+                return 56;
+            } else if (v[1] != 4 && v[3] == 4 && v[5] == 4 && v[7] == 4) {
+                return 57;
+            } else if (v[1] != 4 && v[3] == 4 && v[5] != 4 && v[7] == 4) {
+                return 58;
+            } else if (v[1] == 4 && v[3] != 4 && v[5] == 4 && v[7] == 4) {
+                return 59;
+            } else if (v[1] == 4 && v[3] == 4 && v[5] == 4 && v[7] == 4) {
+                return 60;
+            } else if (v[1] == 4 && v[3] == 4 && v[5] != 4 && v[7] == 4) {
+                return 61;
+            } else if (v[1] == 4 && v[3] != 4 && v[5] == 4 && v[7] != 4) {
+                return 62;
+            } else if (v[1] == 4 && v[3] == 4 && v[5] == 4 && v[7] != 4) {
+                return 63;
+            } else if (v[1] == 4 && v[3] == 4 && v[5] != 4 && v[7] != 4) {
+                return 64;
+            }
+
+            else {
+                return 83;
+            }*/
+>>>>>>> Stashed changes
         case 5:
             return 100;
         case 6:
