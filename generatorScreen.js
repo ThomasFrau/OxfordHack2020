@@ -19,7 +19,11 @@ function DisplayMap()
     {
         for (let x = 0; x < mapArray.length; x++)
         {
-            context.drawImage(tiles, 16 * CalculateTile(x, y), 0, 16, 16, 16 * x, 16 * y, 16, 16);
+            if (grassArray[x][y] == 0) {
+                context.drawImage(tiles, 16 * CalculateTile(x, y), 0, 16, 16, 16 * x, 16 * y, 16, 16);
+            } else {
+                context.drawImage(tiles, 16 * CalculateTile(x, y), 16, 16, 16, 16 * x, 16 * y, 16, 16);
+            }
         }
     }
 }
@@ -62,13 +66,21 @@ function CalculateTile(x,y)
                         if (v[5] == 2) {
                             return 114;
                         } else {
-                            return 115;
+                            if (v[0] == 2) {
+                                return 115;
+                            } else {
+                                return 123;
+                            }
                         }
                     } else {
                         if (v[5] == 2) {
-                            return 113;
+                            if (v[2] == 2) {
+                                return 113;
+                            } else {
+                                return 122;
+                            }
                         } else {
-                            return 0;
+                            return 125;
                         }
                     }
                 }
@@ -78,13 +90,21 @@ function CalculateTile(x,y)
                         if (v[5] == 2) {
                             return 109;
                         } else {
-                            return 110;
+                            if (v[6] == 2) {
+                                return 110;
+                            } else {
+                                return 121;
+                            }
                         }
                     } else {
                         if (v[5] == 2) {
-                            return 108;
+                            if (v[8] == 2) {
+                                return 108;
+                            } else {
+                                return 120;
+                            }                            
                         } else {
-                            return 0;
+                            return 124;
                         }
                     }
                 } else {
@@ -92,11 +112,11 @@ function CalculateTile(x,y)
                         if (v[5] == 2) {
                             return 117;
                         } else {
-                            return 0;
+                            return 127;
                         }
                     } else {
                         if (v[5] == 2) {
-                            return 0;
+                            return 126;
                         } else {
                             return 0;
                         }
