@@ -68,7 +68,7 @@ class Item {
 				break;
 			case "Armour":
 				this.stats.push(this.randomWeight(30));
-				this.stats.push(Math.floor(Math.random() * 5) + 10);
+				this.stats.push(Math.floor(Math.random() * 20);
 				break;
 			case "Food":
 				this.stats.push(this.randomWeight(3));
