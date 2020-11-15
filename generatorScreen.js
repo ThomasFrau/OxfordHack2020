@@ -49,7 +49,11 @@ function CalculateTile(x,y)
     switch (v[4])
     {
         case 1:
-            return 1;
+            if (v[0] == 4 && v[1] == 4 && v[2] == 4 && v[3] == 4 && v[5] == 4 && v[] == 4 && v[7] == 4 && v[8] == 4) {
+                return 92;
+            }else {
+                return 1;
+            }
         case 2:
             if (v[1] == 2 || v[1] == 5) {
                 if (v[7] == 2 || v[7] == 5) {
