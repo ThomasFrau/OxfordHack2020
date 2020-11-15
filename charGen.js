@@ -500,7 +500,9 @@ function changeName() {
 function changeClass(mod) {
 	let classes = ["Cleric", "Sorcerer", "Barbarian", "Bard", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Warlock", "Wizard"];
 	let classIndex = classes.indexOf(character.charClass);
-	character.charClass = classes[(classIndex+mod)%classes.length];
+	classIndex = (classIndex+mod)%classes.length;
+	if (classIndex == -1) {classIndex	= 11;} 
+	character.charClass = classes[classIndex];
 	updateCharacter(character);
 	displayCharacter(character);
 }
@@ -508,9 +510,30 @@ function changeClass(mod) {
 function changeBackground(mod) {
 	let background = ["Acolyte", "Charlattan", "Criminal", "Entertainer", "Folk Hero", "Gladiator", "Guild Artisan", "Hermit", "Knight", "Noble", "Outlander", "Pirate", "Sage", "Sailor", "Soldier", "Urchin"];
 	let backgroundIndex = background.indexOf(character.background);
-	character.background = background[(backgroundIndex+mod)%background.length];
+	backgroundIndex = (backgroundIndex+mod)%background.length;
+	if (backgroundIndex == -1) {backgroundIndex	= 15;} 
+	character.background = background[backgroundIndex];
 	updateCharacter(character);
 	displayCharacter(character);
+}
+
+function changeRace(mod) {
+	let races = ["Dragonborn", "Elf", "Dwarf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Human", "Tiefling"];
+	let raceIndex = races.indexOf(character.race);
+	raceIndex = (raceIndex+mod)%races.length;
+	if (raceIndex == -1) {raceIndex = 8;}
+	character.race = races[raceIndex];
+	updateCharacter(character);
+	displayCharacter(character);
+}
+
+function changeAlignment(mod) {
+	let alignments = ["Lawful Good", "Neutral Good", "Chaotic Good", "Lawful Neutral", "Neutral", "Chaotic Neutral", "Lawful Evil", "Neutral Evil", "Chaotic Evil"];
+	let alignIndex = alignments.indexOf(character.alignment);
+	alignIndex = (alignIndex+mod)%alignments.length
+	if (alignIndex == -1) {alignIndex = 8;}
+	character.alignment = alignments[alignIndex];
+	displayCharacter(character)
 }
 
 function updateCharacter(character) { // Changes Derived Stats
