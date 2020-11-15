@@ -22,7 +22,7 @@
 		</style>
 	</head>
 	<body>
-		<img id="img_Tileset" class="asset" src="Assets/tileSet/tileset.png" alt="" />
+		<img id="img_Tileset" class="asset" src="Assets/tileSet/tilemap.png" alt="" />
 		<header>
 			<nav>
 				<a href="https://ramranch.xxx/">Main Page</a>
@@ -35,7 +35,8 @@
 			<canvas id="generatorScreen" width="800px" height="800px"></canvas>
 		</main>
 		<aside>
-			<button type="button" onclick="DisplayMap();">Generate Map!</button>
+			<button type="button" onclick="DisplayMap();">Generate Map</button>
+			<button type="button" onclick="Download(canvas, 'map.png');">Download Map</button>
 		</aside>
 		<script src="MapGen.js"></script>
 		<script src="generatorScreen.js"></script>

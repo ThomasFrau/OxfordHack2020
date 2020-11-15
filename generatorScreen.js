@@ -2,11 +2,11 @@
 
 const canvas = document.getElementById("generatorScreen");
 const context = canvas.getContext("2d");
+const downloadButton = document.getElementById("downloadButton");
 
 let tiles = new Image();
 
-tiles.src = "Assets/tileSet/tileset.png";
-
+tiles.src = "Assets/tileSet/tilemap.png";
 
 function TestFunction()
 {
@@ -261,4 +261,22 @@ function GetTerrainType(x, y)
 function Surroundings(x, y)
 {
     return 
+}
+
+//Doesn't work due to security error
+function Download(canvas, filename) {
+    let lnk = document.createElement('a'), e;
+    lnk.download = filename;
+    lnk.href = canvas.toDataURL("image/png;base64");
+
+    if (document.createEvent) {
+        e = document.createEvent("MouseEvents");
+        e.initMouseEvent("click", true, true, window,
+            0, 0, 0, 0, 0, false, false, false,
+            false, 0, null);
+
+        lnk.dispatchEvent(e);
+    } else if (lnk.fireEvent) {
+        lnk.fireEvent("onclick");
+    }
 }
