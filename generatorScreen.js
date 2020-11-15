@@ -148,7 +148,7 @@ function CalculateTile(x,y)
 
             return 2;
         case 3:
-            return 0;      
+            return 132;      
         case 4:         //paths
             //v[0] != 4 && v[1] != 4 && v[2] != 4 && v[3] == 4 && v[5] == 4 && v[6] != 4 && v[7] != 4 && v[8] != 4
             if (v[1] == 4 || v[1] == 5) {
