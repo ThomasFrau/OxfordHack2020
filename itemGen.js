@@ -5,7 +5,7 @@ class Item
 {
 	constructor()
 	{
-		this.stats;
+		this.stats =[];
 		this.item = this.createItem();
 		
 
@@ -25,8 +25,9 @@ class Item
 		let typeOfItem = ["Trinket", "Weapon", "Armour", "Food"];
 		let itemTomake = Math.floor(Math.random() * typeOfItem.length);
 
-		this.stats = this.createStats(typeOfItem[itemTomake]);
-		console.log(this.stats);
+		this.createStats(typeOfItem[itemTomake]);
+
+		console.log(this.stats[0]);
 
 		switch(typeOfItem[itemTomake])
 		{
@@ -54,17 +55,18 @@ class Item
 		switch(item)
 		{
 			case "Trinket":
-				return this.randomWeight(10);
+				this.stats.push(this.randomWeight(10));
 				break;
 			case "Weapon":
-				return this.randomWeight(20);
+				this.stats.push(this.randomWeight(20));
 				break;
 
 			case "Armour":
-				return this.randomWeight(30);
-
+				this.stats.push(this.randomWeight(30));
+				break;
 			case "Food":
-				return this.randomWeight(2);
+				this.stats.push(this.randomWeight(3));
+				break;
 		}
 	}
 
@@ -87,10 +89,6 @@ class Item
 		let randType = Math.floor(Math.random() * typesOfTrinkets.length);
 		let randEff = Math.floor(Math.random() * typesOfEffects.length);
 
-		/*
-		let weight = this.randomWeight(10);
-		console.log("Weight of trinket is: " + weight);
-		*/
 
 		//this can be probably done using concat, stays like for now however
 		//i can not be bothered to make this nicer
@@ -113,10 +111,6 @@ class Item
 		let randWep = Math.floor(Math.random() * typesOfWeapons.length);
 		let randDmg = Math.floor(Math.random() * typesOfDamage.length);
 
-		/*
-		let weight = this.randomWeight(20);
-		console.log("Weight: " + weight);
-		*/
 
 		finalItem = adjectives[randAdj] + " " + typesOfWeapons[randWep] + " " + typesOfDamage[randDmg];
 		return finalItem;	
@@ -134,10 +128,6 @@ class Item
 		let randPro = Math.floor(Math.random() * typesOfProtection.length);
 
 		finalItem = adjectives[randAdj] + " " + typesOfArmour[randArmour] + " " + typesOfProtection[randPro];
-		/*
-		let weight = this.randomWeight(30);
-		console.log("Weight: " + weight);
-		*/
 		return finalItem;
 	}
 
@@ -155,11 +145,6 @@ class Item
 
 		finalItem = foodAdjectives[randFoodAdj] + " " + foods[randFood] + " that " + foodAttributes[randFoodAtr];
 
-		/*
-		let weight = Math.random();
-		//needs to be printed on screen
-		console.log("Weight: " + weight);
-		*/
 		return finalItem;
 
 	}
@@ -172,5 +157,5 @@ function generateItem()
 	//probably can be done via accesing only one method from class Item(), for now item.makeTrinket() will have to be good enough
 
 	document.getElementById("Item").innerHTML = item.item + ".";
-	document.getElementById("Stats").innerHTML = "Weight is: " + item.stats + ".";
+	document.getElementById("Stats").innerHTML = "Weight is: " + item.stats[0] + ".";
 }
