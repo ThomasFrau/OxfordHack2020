@@ -13,7 +13,7 @@
     }
     section{
       padding:15pt;
-      display:inline;
+      display:inline-block;
     }
     .right{
       float:right;
