@@ -1,4 +1,4 @@
-var adjectives = ["Seductive", "Dank", "Golden", "Silver", "Small", "Big", "Tiny", "Gigantic", "Heavy", "Light", "Diamond", "Wooden", "Expensive", "Cheap", "Dirty", "Used", "Brand-new", "Broken", "Exotic", "Powerful", "Burning", "Wireless", "Invisible", "Cringey", "Clean", "Creepy", "Useless", "German-made"];
+var adjectives = ["Boomerang-shaped", "Rhombus-shaped", "Circular", "Glass", "Seductive", "Dank", "Golden", "Silver", "Small", "Big", "Tiny", "Gigantic", "Heavy", "Light", "Diamond", "Wooden", "Expensive", "Cheap", "Dirty", "Used", "Brand-new", "Broken", "Exotic", "Powerful", "Burning", "Wireless", "Invisible", "Cringey", "Clean", "Creepy", "Useless", "German-made"];
 
 
 class Item {
@@ -68,7 +68,7 @@ class Item {
 				break;
 			case "Armour":
 				this.stats.push(this.randomWeight(30));
-				this.stats.push(Math.floor(Math.random() * 5) + 10);
+				this.stats.push(Math.floor(Math.random() * 20);
 				break;
 			case "Food":
 				this.stats.push(this.randomWeight(3));
@@ -99,8 +99,8 @@ class Item {
 		//add more typesOfEffects, needs more funny ones
 		//takes random positions from typesOfTrinkets and typesOfEffects and concats them into one string
 		let finalItem = '';
-		let typesOfTrinkets = ["dreamcatcher", "rubber duck", "cigarettes", "amulet", "ring", "tooth", "earring", "spoon", "mirror", "cup", "hairbrush", "doorknob", "book", "eye", "deck of cards", "bag of dice", "keychain"];
-		let typesOfEffects = ["turns you invisible", "makes you go mad", "turns you into a wolf", "allows you to hear to demons", "turns you into a pickle", "makes you really hungry all the time", "you can't take off", "makes you forget", "allows the demons to speak back"];
+		let typesOfTrinkets = ["vape pen", "dreamcatcher", "rubber duck", "cigarettes", "amulet", "ring", "tooth", "earring", "spoon", "mirror", "cup", "hairbrush", "doorknob", "book", "eye", "deck of cards", "bag of dice", "keychain"];
+		let typesOfEffects = ["allows you to speak any language you wish", "makes you instantly cool", "never gets lost", "gives you the ability to see in the night", "that opens any door you wish", "never gets dirty", "dimly glows any colour you want it to", "gives you teleportation skills", "makes you laugh constantly", "turns you invisible", "makes you go mad", "turns you into a wolf", "allows you to hear to demons", "turns you into a pickle", "makes you really hungry all the time", "you can't take off", "makes you forget", "allows the demons to speak back", "makes you psychic", "makes you addicted to garlic bread"];
 
 		let randAdj = Math.floor(Math.random() * adjectives.length);
 		let randType = Math.floor(Math.random() * typesOfTrinkets.length);
@@ -136,7 +136,7 @@ class Item {
 		let finalItem = '';
 
 		let typesOfArmour = ["splint", "half plate", "hide", "hood", "clogs", "underwear", "shirt", "t-shirt", "trousers", "breastplate", "sliders", "boots", "helmet", "tin-foil hat", "gloves", "gauntlets", "greaves", "sunglasses", "cloak", "veil", "robe", "chainveil armour"];
-		let typesOfProtection = ["with protection from germans", "with protection from goblins", "with protection from zombies", "with protection from fire", "with protection from ice", "with protection from dragons", "with protection from monkeys", "with protection from devils", "with protection from demons"];
+		let typesOfProtection = ["with protection from germans", "with protection from goblins", "with protection from zombies", "with protection from fire", "with protection from ice", "with protection from dragons", "with protection from monkeys", "with protection from devils", "with protection from demons", "that make you slightly uncomfortable", "that gives you a lot of confidence", "that minimise your confidence", "that makes you look funny"];
 
 		let randAdj = Math.floor(Math.random() * adjectives.length);
 		let randArmour = Math.floor(Math.random() * typesOfArmour.length);
@@ -151,7 +151,7 @@ class Item {
 
 		let foodAdjectives = ["Poisoned", "Chewy", "Burnt", "Acidic", "Scrumptious", "Sour", "Greasy", "Moldy", "Stale", "Suspiciously gray", "Fresh", "Wet", "Dry", "Crunchy", "Rotten", "Stale", "Garlic", "Salty", "Sweet", "Cheesy", "Kosher", "Halal", "Deep-fried", "Plain", "Succulent", "Tangy", "Crommulent", "Appetising", "Embiggening"];
 		let foods = ["bread", "pizza", "soup", "baguette", "steak", "kebab", "rice", "cake", "eggs", "ham", "honey", "chicken", "turkey", "fish", "fungi", "burrito", "curry", "duck", "gnocchi", "hamburger", "jerky", "quiche", "yogurt", "zucchini", "tangerine", "oatmeal", "urchins"];
-		let foodAttributes = ["looks very delicious", "looks very suspicious"];
+		let foodAttributes = ["looks very delicious", "looks very suspicious", "tastes poorly", "is moving around slightly", "is uncomfortably large", "is very tiny", "tastes like chicken", "is poisoned", "looks like it is poisoned"];
 
 		let randFoodAdj = Math.floor(Math.random() * foodAdjectives.length);
 		let randFood = Math.floor(Math.random() * foods.length);
@@ -187,17 +187,9 @@ function generateTrinket() {
 
 	document.getElementById("Item").innerHTML = item.item + ".";
 	document.getElementById("lstWeight").innerHTML = "Weight is: " + item.stats[0];
-	if (item.type == "Weapon") {
-		let changingElement = document.getElementById("lstDam");
-		changingElement.innerHTML = "Damage is: " + item.stats[1];
-		changingElement.setAttribute("class", "notHidden");
-	}
-	else if (item.type == "Armour") {
-		let changingElement = document.getElementById("lstArm");
-		changingElement.innerHTML = "AC is: " + item.stats[1];
-		changingElement.setAttribute("class", "notHidden");
-	}
-
+	
+	document.getElementById("lstDam").setAttribute("class", "hidden");
+	document.getElementById("lstArm").setAttribute("class", "hidden");
 }
 
 function generateWeapon() {
@@ -205,17 +197,10 @@ function generateWeapon() {
 
 	document.getElementById("Item").innerHTML = item.item + ".";
 	document.getElementById("lstWeight").innerHTML = "Weight is: " + item.stats[0];
-	if (item.type == "Weapon") {
-		let changingElement = document.getElementById("lstDam");
-		changingElement.innerHTML = "Damage is: " + item.stats[1];
-		changingElement.setAttribute("class", "notHidden");
-	}
-	else if (item.type == "Armour") {
-		let changingElement = document.getElementById("lstArm");
-		changingElement.innerHTML = "AC is: " + item.stats[1];
-		changingElement.setAttribute("class", "notHidden");
-	}
-
+	
+	document.getElementById("lstDam").innerHTML = "Damage is: " + item.stats[1];
+	document.getElementById("lstDam").setAttribute("class", "notHidden");
+	document.getElementById("lstArm").setAttribute("class", "hidden");
 }
 
 function generateArmour() {
@@ -223,16 +208,10 @@ function generateArmour() {
 
 	document.getElementById("Item").innerHTML = item.item + ".";
 	document.getElementById("lstWeight").innerHTML = "Weight is: " + item.stats[0];
-	if (item.type == "Weapon") {
-		let changingElement = document.getElementById("lstDam");
-		changingElement.innerHTML = "Damage is: " + item.stats[1];
-		changingElement.setAttribute("class", "notHidden");
-	}
-	else if (item.type == "Armour") {
-		let changingElement = document.getElementById("lstArm");
-		changingElement.innerHTML = "AC is: " + item.stats[1];
-		changingElement.setAttribute("class", "notHidden");
-	}
+
+	document.getElementById("lstArm").innerHTML = "AC is: " + item.stats[1];
+	document.getElementById("lstArm").setAttribute("class", "notHidden");
+	document.getElementById("lstDam").setAttribute("class", "hidden");
 
 }
 
@@ -241,15 +220,6 @@ function generateFood() {
 
 	document.getElementById("Item").innerHTML = item.item + ".";
 	document.getElementById("lstWeight").innerHTML = "Weight is: " + item.stats[0];
-	if (item.type == "Weapon") {
-		let changingElement = document.getElementById("lstDam");
-		changingElement.innerHTML = "Damage is: " + item.stats[1];
-		changingElement.setAttribute("class", "notHidden");
-	}
-	else if (item.type == "Armour") {
-		let changingElement = document.getElementById("lstArm");
-		changingElement.innerHTML = "AC is: " + item.stats[1];
-		changingElement.setAttribute("class", "notHidden");
-	}
-
+	document.getElementById("lstDam").setAttribute("class", "hidden");
+	document.getElementById("lstArm").setAttribute("class", "hidden");
 }
