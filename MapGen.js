@@ -121,7 +121,7 @@ function generateRiver(mapArray, startPoint, length){
     if (position[1] > 48){
       position[1] = 48;
     } 
-    mapArray[position[0]][position[1]] = 8; //River
+    mapArray[position[0]][position[1]] = 2; //River
     if (turnTimer > turnTimerMax){
       if (sideways.includes(direction)){
         direction = vertical[Math.floor(Math.random() * vertical.length)];
@@ -174,10 +174,28 @@ function generatePath(mapArray, startPoint, length){
     if (position[1] > 48){
       position[1] = 48;
     } 
-    if (mapArray[position[0]][position[1]] != 8){
-      mapArray[position[0]][position[1]] = 4;
+    waterFlag = false;
+    if ((mapArray[position[0]][position[1]] == 2 && mapArray[position[0]+1][position[1]] != 2 && direction == "North")||(mapArray[position[0]][position[1]] == 2 && mapArray[position[0]-1][position[1]] != 2 && direction == "South")||(mapArray[position[0]][position[1]] == 2 && mapArray[position[0]][position[1]-1] != 2 && direction == "West")||(mapArray[position[0]][position[1]] == 2 && mapArray[position[0]][position[1]+1] != 2 && direction == "East")){
+      for (let i = -1; i < 2; i++){
+        for (let j = -1; i < 2; j++){
+          try{
+            if (mapArray[position[0]+i][position[0]+j] == 2){
+              waterFlag = true;
+            }
+          }
+          catch(err){
+            ;
+          }
+        }
+      }
+      
+      if (waterFlag == true){
+        mapArray[position[0]][position[1]] = 5;
+      } else {
+        mapArray[position[0]][position[1]] = 4;
+      }
     } else {
-      mapArray[position[0]][position[1]] = 5;
+      mapArray[position[0]][position[1]] = 4;
     }
     if (position[0]<49 && Math.floor(Math.random()*30) == 1){
       mapArray[position[0]+1][position[1]] = 6; //Building
@@ -293,11 +311,6 @@ function genMap(mapArray){
   }
   for (let i = 0; i < mapArray[0].length; i++){
     for (let j = 0; j < mapArray[0].length; j++){
-      if (mapArray[i][j] == 5){
-        if (!((mapArray[i][j] == 5 && mapArray[i+1][j] == 8 && mapArray[i+2][j] != 8 && mapArray[i-1][j] != 8)||(mapArray[i][j] == 5 && mapArray[i][j+1] == 8 && mapArray[i][j+2] != 8 && mapArray[i][j-1] != 8))){
-          mapArray[i][j] = 1;
-        }
-        }
         if (j==0 || i==0 || j==49 || i==49){
           mapArray[i][j] = 2
         }
