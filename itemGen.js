@@ -180,7 +180,7 @@ function generateItem()
 		let changingElement = document.getElementById("lstDam");
 		changingElement.innerHTML = "Damage is: " + item.stats[1];
 		changingElement.setAttribute("class", "notHidden");
-		let otherElement =  = document.getElementById("lstArm");
+		let otherElement = document.getElementById("lstArm");
 		otherElement.innerHTML = "AC is: ";
 		otherElement.setAttribute("class", "hidden");
 	}
@@ -189,7 +189,7 @@ function generateItem()
 		changingElement.innerHTML = "AC is: " + item.stats[1];
 		changingElement.setAttribute("class", "notHidden");
 		let otherElement = document.getElementById("lstDam");
-		otherElement.innerHTML = "Damage is: " + item.stats[1];
+		otherElement.innerHTML = "Damage is: ";
 		otherElement.setAttribute("class", "notHidden");
 	}
 
