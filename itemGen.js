@@ -176,7 +176,15 @@ function generateItem()
 
 	document.getElementById("Item").innerHTML = item.item + ".";
 	document.getElementById("lstWeight").innerHTML = "Weight is: " + item.stats[0];
-	document.getElementById("lstDam").innerHTML = "Damage is: " + item.stats[1];
-	document.getElementById("lstArm").innerHTML = "AC is: " + item.stats[1];
+	if (item.type == "Weapon") {
+		let changingElement = document.getElementById("lstDam");
+		changingElement.innerHTML = "Damage is: " + item.stats[1];
+		changingElement.setAttribute("class", "notHidden");
+	}
+	else if (item.type == "Armour") {
+		let changingElement = document.getElementById("lstArm");
+		changingElement.innerHTML = "AC is: " + item.stats[1];
+		changingElement.setAttribute("class", "notHidden");
+	}
 
 }
