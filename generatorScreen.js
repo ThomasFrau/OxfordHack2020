@@ -4,7 +4,7 @@ const canvas = document.getElementById("generatorScreen");
 const context = canvas.getContext("2d");
 const downloadButton = document.getElementById("downloadButton");
 
-let mapArray = genMap();
+var mapArray = genMap();
 
 let tiles = new Image();
 
@@ -17,6 +17,8 @@ function TestFunction()
 
 function DisplayMap()
 {
+    mapArray = genMap();
+
     console.log(mapArray);
 
     for (let y = 0; y < mapArray.length; y++)
@@ -49,7 +51,7 @@ function CalculateTile(x,y)
     switch (v[4])
     {
         case 1:
-            if (v[0] == 4 && v[1] == 4 && v[2] == 4 && v[3] == 4 && v[5] == 4 && v[] == 4 && v[7] == 4 && v[8] == 4) {
+            if (v[0] == 4 && v[1] == 4 && v[2] == 4 && v[3] == 4 && v[5] == 4 && v[6] == 4 && v[7] == 4 && v[8] == 4) {
                 return 92;
             }else {
                 return 1;
