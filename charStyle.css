@@ -58,6 +58,6 @@
         background-color:white;
         color:#454545;
     }
-	.asset {
+	.asset, .hidden {
 		display: none;
 	}
