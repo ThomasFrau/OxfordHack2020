@@ -22,7 +22,7 @@ function DisplayMap()
             if (grassArray[x][y] == 0) {
                 context.drawImage(tiles, 16 * CalculateTile(x, y), 0, 16, 16, 16 * x, 16 * y, 16, 16);
             } else {
-                context.drawImage(tiles, 16 * CalculateTile(x, y), 16, 16, 16, 16 * x, 16 * y, 16, 16);
+                context.drawImage(tiles, 16 * CalculateTile(x, y), 0 /*Change to 16 for fancy grass*/, 16, 16, 16 * x, 16 * y, 16, 16);
             }
         }
     }
@@ -324,6 +324,7 @@ function CalculateTile(x,y)
                 return 118;
             }
         case 6:
+            return Math.floor(Math.random() * 6) + 3;
             return 3;
         case 7: //Trees
             if (v[1] == 7) {
