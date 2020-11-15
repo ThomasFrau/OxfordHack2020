@@ -321,4 +321,30 @@ function genMap(mapArray){
     document.write(mapArray[i] + "<br>");
   }
 }
+
+function noiseReturn(mapArray){
+  let propensity = 1;
+  let num = 1
+  for (let i = 0; i < mapArray[0].length; i++){
+    for (let j = 0; j < mapArray[0].length; j++){
+      num = Math.round(Math.random());
+      if (Math.floor(Math.random()*3)==1){
+        num = propensity;
+      }
+      propensity = num
+      mapArray[i][j] = num;
+    }
+  }
+  for (let i = 0; i < mapArray[0].length; i++){
+    for (let j = 0; j < mapArray[0].length; j++){
+      num = propensity;
+      if (Math.floor(Math.random()*3)==1){
+        mapArray[j][i] = num;
+      }
+      propensity = mapArray[j][i];
+    }
+    document.write(mapArray[i] + "<br>");
+  }
+}
+noiseReturn(mapArray);
 genMap(mapArray);
