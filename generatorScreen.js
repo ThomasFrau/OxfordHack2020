@@ -318,7 +318,11 @@ function CalculateTile(x,y)
                 }
             }     
         case 5:
-            return 118;
+            if (v[3] == 4) {
+                return 119;
+            } else {
+                return 118;
+            }
         case 6:
             return 3;
         case 7: //Trees
