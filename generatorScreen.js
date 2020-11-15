@@ -6,7 +6,7 @@ const downloadButton = document.getElementById("downloadButton");
 
 let tiles = new Image();
 
-tiles.src = "Assets/tileSet/tilemap.png";
+tiles.src = "Assets/tileSet/tileset.png";
 
 function TestFunction()
 {
