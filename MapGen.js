@@ -343,7 +343,7 @@ function genMap(){
       }
       //document.write(mapArray[i] + "<br>");
     }
-    if (grassCounter < 350){
+    if (grassCounter < 400){
       doGenerate = false
     }
   }
