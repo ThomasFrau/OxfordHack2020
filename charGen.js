@@ -497,7 +497,23 @@ function changeName() {
 	displayCharacter(character);
 }
 
-function updateCharacter(character) {
+function changeClass(mod) {
+	let classes = ["Cleric", "Sorcerer", "Barbarian", "Bard", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Warlock", "Wizard"];
+	let classIndex = classes.indexOf(character.charClass);
+	character.charClass = classes[(classIndex+mod)%classes.length];
+	updateCharacter(character);
+	displayCharacter(character);
+}
+
+function changeBackground(mod) {
+	let background = ["Acolyte", "Charlattan", "Criminal", "Entertainer", "Folk Hero", "Gladiator", "Guild Artisan", "Hermit", "Knight", "Noble", "Outlander", "Pirate", "Sage", "Sailor", "Soldier", "Urchin"];
+	let backgroundIndex = background.indexOf(character.background);
+	character.background = background[(backgroundIndex+mod)%background.length];
+	updateCharacter(character);
+	displayCharacter(character);
+}
+
+function updateCharacter(character) { // Changes Derived Stats
 	character.proficiencies = character.generateProficiencies(character.background, character.charClass);
 	character.hitDie = character.getHitDie();
 	character.hitDieNum = character.getHitDieNum();
