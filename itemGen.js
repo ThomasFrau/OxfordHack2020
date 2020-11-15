@@ -89,6 +89,12 @@ class Item
 
 		return finalItem;
 	}
+
+	makeFood()
+	{
+		let foodAdjectives = ["Poisoned", "Chewy", "Burnt", "Acidic", "Scrumptious", "Sour", "Greasy", "Moldy", "Stale", "Suspiciously gray", "Fresh", "Wet", "Dry", "Crunchy", "Rotten", "Stale", "Garlic", "Salty", "Sweet", "Cheesy", "Kosher", "Halal", "Deep-fried", "Plain", "Succulent", "Tangy", "Crommulent", "Appetising", "Embiggening"];
+		let foods = ["bread", "pizza", "soup", "baguette", "steak", "kebab", "rice", "cake", "eggs", "ham", ""];
+	}
 }
 
 function generateItem()

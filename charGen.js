@@ -550,6 +550,8 @@ function updateCharacter(character) { // Changes Derived Stats
 }
 
 function displayCharacter(character){ // updates HTML of character stats so User can see
+
+	//Complete utter shit
 	
 	document.getElementById("lstCharName").innerHTML = "Character Name: "+character.name;
 	document.getElementById("lstRace").innerHTML = "Race: "+character.race;
