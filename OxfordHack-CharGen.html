@@ -3,29 +3,7 @@
 <meta charset="UTF-8">
 	<head>
 		<title>DND Character Generator - OxfordHack</title>
-		<style>
-			canvas {
-				border: 1px solid black;
-			}
-			main {
-				display: inline-block;
-				width: 84%;
-			}
-			aside {
-				display: inline-block;
-				width: 15%;
-				float: right;
-			}
-			aside button {
-				width: 80%;
-			}
-			aside button.half {
-				width: 39%;
-			}
-			.asset {
-				display: none;
-			}
-		</style>
+		<link rel="stylesheet" href="charStyle.css">
 	</head>
 	<body>
 		<header>
@@ -38,7 +16,7 @@
 			<h1>Character Generator</h1>
 		</header>
 		<main>
-			<section>
+			<section class="left">
 				<h2>Character Meta</h2>
 				<ul>
 					<li id="lstCharName">Character Name:</li>
@@ -49,7 +27,7 @@
 					<li id="lstAlignment">Alignment:</li>
 				</ul>
 			</section>
-			<section>
+			<section class="right">
 				<h2>Attributes</h2>
 				<ul>
 					<li id="lstSTR">Strength:</li>
@@ -60,7 +38,7 @@
 					<li id="lstCHA">Charisma:</li>
 				</ul>
 			</section>
-			<section>
+			<section class="left">
 				<h2>Derived Stats</h2>
 				<ul>
 					<li id="lstProf">Proficiency:</li>
@@ -71,7 +49,7 @@
 					<li id="lstAC">Armour Class:</li>
 				</ul>
 			</section>
-			<section>
+			<section class="right">
 				<h2>Saving Throws</h2>
 				<ul>
 					<li id="lstSTRsav">Strength:</li>
@@ -82,7 +60,7 @@
 					<li id="lstCHAsav">Charisma:</li>
 				</ul>
 			</section>
-			<section>
+			<section class="left">
 				<h2>Skills</h2>
 				<ul>
 					<li id="lstSklDexAcr">Acrobatics (Dex):</li>
@@ -108,30 +86,32 @@
 		</main>
 		<aside>
 			<button type="button" onclick="generateCharacter();">Generate Character!</button>
-			<button type="button" onclick="changeName();">Change Name!</button>
-			<button class="half" type="button" onclick="changeRace(1);">Forward Race!</button>
-			<button class="half" type="button" onclick="changeRace(-1);">Previous Race!</button>
-			<button class="half" type="button" onclick="changeClass(1);">Forward Class!</button>
-			<button class="half" type="button" onclick="changeClass(-1);">Previous Class!</button>
-			<button class="half" type="button" onclick="changeLevel(1);">Increase Level!</button>
-			<button class="half" type="button" onclick="changeLevel(-1);">Decrease Level!</button>
-			<button class="half" type="button" onclick="changeBackground(1);">Forward Background!</button>
-			<button class="half" type="button" onclick="changeBackground(-1);">Previous Background!</button>
-			<button class="half" type="button" onclick="changeAlignment(1);">Next Alignment!</button>
-			<button class="half" type="button" onclick="changeAlignment(-1);">Previous Alignment!</button>
-			<button class="half" type="button" onclick="changeAttribute(1,'Str');">Increase Strength!</button>
-			<button class="half" type="button" onclick="changeAttribute(-1,'Str');">Decrease Strength!</button>
-			<button class="half" type="button" onclick="changeAttribute(1,'Dex');">Increase Dexterity!</button>
-			<button class="half" type="button" onclick="changeAttribute(-1,'Dex');">Decrease Dexterity!</button>
-			<button class="half" type="button" onclick="changeAttribute(1,'Con');">Increase Constitution!</button>
-			<button class="half" type="button" onclick="changeAttribute(-1,'Con');">Decrease Constitution!</button>
-			<button class="half" type="button" onclick="changeAttribute(1,'Int');">Increase Intelligence!</button>
-			<button class="half" type="button" onclick="changeAttribute(-1,'Int');">Decrease Intelligence!</button>
-			<button class="half" type="button" onclick="changeAttribute(1,'Wis');">Increase Wisdom!</button>
-			<button class="half" type="button" onclick="changeAttribute(-1,'Wis');">Decrease Wisdom!</button>
-			<button class="half" type="button" onclick="changeAttribute(1,'Cha');">Increase Charisma!</button>
-			<button class="half" type="button" onclick="changeAttribute(-1,'Cha');">Decrease Charisma!</button>
+			<button type="button" onclick="changeName();">Change Name</button>
+			<button class="half" type="button" onclick="changeRace(1);">Forward <br>Race</button>
+			<button class="half" type="button" onclick="changeRace(-1);">Previous <br>Race</button>
+			<button class="half" type="button" onclick="changeClass(1);">Forward <br>Class</button>
+			<button class="half" type="button" onclick="changeClass(-1);">Previous <br>Class</button>
+			<button class="half" type="button" onclick="changeLevel(1);">Increase <br>Level</button>
+			<button class="half" type="button" onclick="changeLevel(-1);">Decrease <br>Level</button>
+			<button class="half" type="button" onclick="changeBackground(1);">Forward <br>Background</button>
+			<button class="half" type="button" onclick="changeBackground(-1);">Previous <br>Background</button>
+			<button class="half" type="button" onclick="changeAlignment(1);">Next <br>Alignment</button>
+			<button class="half" type="button" onclick="changeAlignment(-1);">Previous <br>Alignment</button>
+			<button class="half" type="button" onclick="changeAttribute(1,'Str');">Increase <br>Strength</button>
+			<button class="half" type="button" onclick="changeAttribute(-1,'Str');">Decrease <br>Strength</button>
+			<button class="half" type="button" onclick="changeAttribute(1,'Dex');">Increase <br>Dexterity</button>
+			<button class="half" type="button" onclick="changeAttribute(-1,'Dex');">Decrease <br>Dexterity</button>
+			<button class="half" type="button" onclick="changeAttribute(1,'Con');">Increase <br>Constitution</button>
+			<button class="half" type="button" onclick="changeAttribute(-1,'Con');">Decrease <br>Constitution</button>
+			<button class="half" type="button" onclick="changeAttribute(1,'Int');">Increase <br>Intelligence</button>
+			<button class="half" type="button" onclick="changeAttribute(-1,'Int');">Decrease <br>Intelligence</button>
+			<button class="half" type="button" onclick="changeAttribute(1,'Wis');">Increase <br>Wisdom</button>
+			<button class="half" type="button" onclick="changeAttribute(-1,'Wis');">Decrease <br>Wisdom</button>
+			<button class="half" type="button" onclick="changeAttribute(1,'Cha');">Increase <br>Charisma</button>
+			<button class="half" type="button" onclick="changeAttribute(-1,'Cha');">Decrease <br>Charisma</button>
+			<button type="button" onclick="dlCharacterJSON();">Download Character</button>
 		</aside>
+		<a id="downloadAnchorElem" style="display:none"></a>
 		<script src="charGen.js"></script>
 	</body>
 </html>

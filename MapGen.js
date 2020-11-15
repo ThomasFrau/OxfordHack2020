@@ -5,6 +5,7 @@ let mapArray = [[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 
 /*
     KEY
+
 1= GRASS
 2= WATER
 3= MOUNTAINS
@@ -12,6 +13,8 @@ let mapArray = [[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 5= BRIDGE
 6= HOUSE 
 7= TREES
+8= RIVER
+
  */
 
 function generateLake(mapArray,radius,topLeft,tileType,variations){
@@ -102,7 +105,7 @@ function generateRiver(mapArray, startPoint, length){
   position = startPoint;
   direction = "East";
   sideways = ["East","West"];
-  vertical = ["North","South"]
+  vertical = ["North","South"];
   turnTimerMax = Math.floor(Math.random()*5)+8;
   turnTimer = 0
   for (let i = 0; i < length; i++){
@@ -118,12 +121,7 @@ function generateRiver(mapArray, startPoint, length){
     if (position[1] > 48){
       position[1] = 48;
     } 
-    if (Math.floor(Math.random()*30) != 1){
-      mapArray[position[0]][position[1]] = 2; //Water
-    } else {
-      mapArray[position[0]][position[1]] = 5; //Bridge
-      mapArray = generatePath(mapArray, position, 100)
-    }
+    mapArray[position[0]][position[1]] = 8; //River
     if (turnTimer > turnTimerMax){
       if (sideways.includes(direction)){
         direction = vertical[Math.floor(Math.random() * vertical.length)];
@@ -176,7 +174,11 @@ function generatePath(mapArray, startPoint, length){
     if (position[1] > 48){
       position[1] = 48;
     } 
-    mapArray[position[0]][position[1]] = 4;
+    if (mapArray[position[0]][position[1]] != 8){
+      mapArray[position[0]][position[1]] = 4;
+    } else {
+      mapArray[position[0]][position[1]] = 5;
+    }
     if (position[0]<49 && Math.floor(Math.random()*30) == 1){
       mapArray[position[0]+1][position[1]] = 6; //Building
     }
@@ -249,35 +251,61 @@ function generateVillage(mapArray, size, topLeft,horizontal){
       }
     }
   }
-  if (Math.floor(Math.random()*3)==1){
-    mapArray = generateVillage(mapArray,size,[topLeft[0]+(Math.floor(Math.random()*3)),topLeft[1]+(Math.floor(Math.random()*3)),!horizontal])
+  if (Math.floor(Math.random()*2)==1){
+    mapArray = generatePath(mapArray,[topLeft[0]+(Math.floor(Math.random()*3)),topLeft[1]+(Math.floor(Math.random()*3))],Math.random()*15+15)
+  }
+  if (Math.floor(Math.random()*2)==1){
+    mapArray = generateVillage(mapArray,size,[topLeft[0]+(Math.floor(Math.random()*3)),topLeft[1]+(Math.floor(Math.random()*3))],!horizontal)
   }
   return mapArray;
 
 }
 
-function genLake(mapArray){
+function genMap(mapArray){
   let baseRadius = Math.floor(Math.random()*(Math.floor(mapArray[0].length/10)))+1;
   let centreLocation = [Math.floor(Math.random()*(mapArray[0].length)),Math.floor(Math.random()*(mapArray[0].length))];
   let numMutations = Math.floor(Math.random()*baseRadius-1) + 2;
-  mapArray = generateLake(mapArray, baseRadius, centreLocation, 2,numMutations);
-  mapArray = generateRiver(mapArray, [Math.floor(Math.random()*(mapArray[0].length)),Math.floor(Math.random()*(mapArray[0].length))], 100);
+  try{
+  mapArray = generateLake(mapArray, baseRadius, centreLocation, 2,numMutations);}
+  catch(err){;}
+  try{
+  mapArray = generateRiver(mapArray, [Math.floor(Math.random()*(mapArray[0].length)),Math.floor(Math.random()*(mapArray[0].length))], 100);}
+  catch(err){;}
   for (let i = 0; i<2; i++){
-    mapArray = generateMountains(mapArray, baseRadius, [Math.floor(Math.random()*(mapArray[0].length)),Math.floor(Math.random()*(mapArray[0].length))], 3,numMutations);
+    try {
+    mapArray = generateMountains(mapArray, baseRadius, [Math.floor(Math.random()*(mapArray[0].length)),Math.floor(Math.random()*(mapArray[0].length))], 3,numMutations);}
+    catch(err){
+      ;
+    }
   }
   for (let i = 0; i<4; i++){
+    try{
     mapArray = generateMountains(mapArray, baseRadius-2, [Math.floor(Math.random()*(mapArray[0].length)),Math.floor(Math.random()*(mapArray[0].length))], 7,numMutations);
+    }
+    catch(err) {
+      ;
+    }
   }
   try{
-    mapArray = generateVillage(mapArray,(Math.floor(Math.random()*3)+3),[Math.floor(Math.random()*(mapArray[0].length)),Math.floor(Math.random()*(mapArray[0].length))],true);
+    mapArray = generateVillage(mapArray,(Math.floor(Math.random()*3)+3),[Math.floor(Math.random()*(mapArray[0].length)),Math.floor(Math.random()*(mapArray[0].length))],true)
   } catch(err) {
-    ;
+    document.write("XDDD")
   }
   for (let i = 0; i < mapArray[0].length; i++){
+    for (let j = 0; j < mapArray[0].length; j++){
+      if (mapArray[i][j] == 5){
+        if (!((mapArray[i][j] == 5 && mapArray[i+1][j] == 8 && mapArray[i+2][j] != 8 && mapArray[i-1][j] != 8)||(mapArray[i][j] == 5 && mapArray[i][j+1] == 8 && mapArray[i][j+2] != 8 && mapArray[i][j-1] != 8))){
+          mapArray[i][j] = 1;
+        }
+        }
+        if (j==0 || i==0 || j==49 || i==49){
+          mapArray[i][j] = 2
+        }
+    }
     if (mapArray[i].length > 50){
       mapArray[i] = mapArray[i].slice(0,50);
     }
-    //document.write(mapArray[i] + "<br>");
+    document.write(mapArray[i] + "<br>");
   }
 }
-genLake(mapArray);
+genMap(mapArray);
