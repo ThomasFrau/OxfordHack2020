@@ -449,8 +449,13 @@ class Jayson { // Where is my Jay Son
 
 let character = new Character();
 
-function xxx() {
-	newWindow = window.open(escape(character));
+function dlCharacterJSON() { //Courtesy of https://stackoverflow.com/questions/19721439/download-json-object-as-a-file-from-browser#30800715
+	displayCharacter(character);
+	let dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(character));
+	let dlAnchorElem = document.getElementById('downloadAnchorElem');
+	dlAnchorElem.setAttribute("href",     dataStr     );
+	dlAnchorElem.setAttribute("download", "character.json");
+	dlAnchorElem.click();
 }
 
 function generateCharacter() {
