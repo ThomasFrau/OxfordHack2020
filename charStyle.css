@@ -29,6 +29,9 @@
 	canvas {
 		border: 1px solid black;
 	}
+	body {
+		margin: 5%;
+	}
 	main {
 		padding-left: 20pt;
 		display: inline-block;

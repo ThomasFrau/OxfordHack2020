@@ -173,11 +173,19 @@ function generateItem() {
 		let changingElement = document.getElementById("lstDam");
 		changingElement.innerHTML = "Damage is: " + item.stats[1];
 		changingElement.setAttribute("class", "notHidden");
+		let otherElement = document.getElementById("lstArm");
+		otherElement.setAttribute("class", "hidden");
 	}
 	else if (item.type == "Armour") {
 		let changingElement = document.getElementById("lstArm");
 		changingElement.innerHTML = "AC is: " + item.stats[1];
 		changingElement.setAttribute("class", "notHidden");
+		let otherElement = document.getElementById("lstDam");
+		otherElement.setAttribute("class", "hidden");
+	}
+	else {
+		document.getElementById("lstDam").setAttribute("class", "hidden");
+		document.getElementById("lstArm").setAttribute("class", "hidden");
 	}
 
 }
