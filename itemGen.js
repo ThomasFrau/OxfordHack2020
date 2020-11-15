@@ -30,7 +30,7 @@ class Item
 				break;
 
 			case "Food":
-				return "Food";
+				return this.makeFood();
 				break;
 		}
 	}
@@ -51,7 +51,6 @@ class Item
 		//this can be probably done using concat, stays like for now however
 		//i can not be bothered to make this nicer
 		finalItem = adjectives[randAdj] + " " + typesOfTrinkets[randType] + " that " + typesOfEffects[randEff];
-		console.log(finalItem);
 		return finalItem;
 	}
 
@@ -92,8 +91,20 @@ class Item
 
 	makeFood()
 	{
+		let finalItem = '';
+
 		let foodAdjectives = ["Poisoned", "Chewy", "Burnt", "Acidic", "Scrumptious", "Sour", "Greasy", "Moldy", "Stale", "Suspiciously gray", "Fresh", "Wet", "Dry", "Crunchy", "Rotten", "Stale", "Garlic", "Salty", "Sweet", "Cheesy", "Kosher", "Halal", "Deep-fried", "Plain", "Succulent", "Tangy", "Crommulent", "Appetising", "Embiggening"];
-		let foods = ["bread", "pizza", "soup", "baguette", "steak", "kebab", "rice", "cake", "eggs", "ham", ""];
+		let foods = ["bread", "pizza", "soup", "baguette", "steak", "kebab", "rice", "cake", "eggs", "ham", "honey", "chicken", "turkey", "fish", "fungi", "burrito", "curry", "duck", "gnocchi", "hamburger", "jerky", "quiche", "yogurt", "zucchini", "tangerine", "oatmeal", "urchins"];
+		let foodAttributes = ["looks very delicious", "looks very suspicious"];
+
+		let randFoodAdj = Math.floor(Math.random() * foodAdjectives.length);
+		let randFood = Math.floor(Math.random() * foods.length);
+		let randFoodAtr = Math.floor(Math.random() * foodAttributes.length);
+
+		finalItem = foodAdjectives[randFoodAdj] + " " + foods[randFood] + " that " + foodAttributes[randFoodAtr];
+
+		return finalItem;
+
 	}
 }
 
