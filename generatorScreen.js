@@ -56,43 +56,13 @@ function CalculateTile(x,y)
                                 if (v[2] == 4) {
                                     if (v[6] == 4) {
                                         if (v[8] == 4) {
-                                            return 60;
+                                            return 70;
                                         } else {
-                                            return 78;
-                                        }
-                                    } else {
-                                        if (v[8] == 4) {
-                                            return 79;
-                                        } else {
-                                            return 74;
-                                        }
-                                    }
-                                } else {
-                                    if (v[6] == 4) {
-                                        if (v[8] == 4) {
-                                            return 80;
-                                        } else {
-                                            return 76;
-                                        }
-                                    } else {
-                                        if (v[8] == 4) {
                                             return 88;
-                                        } else {
-                                            return 83;
-                                        }
-                                    }
-                                }
-                            } else {
-                                if (v[2] == 4) {
-                                    if (v[6] == 4) {
-                                        if (v[8] == 4) {
-                                            return 81;
-                                        } else {
-                                            return 87;
                                         }
                                     } else {
                                         if (v[8] == 4) {
-                                            return 77;
+                                            return 89;
                                         } else {
                                             return 84;
                                         }
@@ -100,15 +70,45 @@ function CalculateTile(x,y)
                                 } else {
                                     if (v[6] == 4) {
                                         if (v[8] == 4) {
-                                            return 75;
+                                            return 90;
                                         } else {
-                                            return 85;
+                                            return 86;
                                         }
                                     } else {
                                         if (v[8] == 4) {
-                                            return 86;
+                                            return 98;
                                         } else {
-                                            return 69;
+                                            return 93;
+                                        }
+                                    }
+                                }
+                            } else {
+                                if (v[2] == 4) {
+                                    if (v[6] == 4) {
+                                        if (v[8] == 4) {
+                                            return 91;
+                                        } else {
+                                            return 97;
+                                        }
+                                    } else {
+                                        if (v[8] == 4) {
+                                            return 87;
+                                        } else {
+                                            return 94;
+                                        }
+                                    }
+                                } else {
+                                    if (v[6] == 4) {
+                                        if (v[8] == 4) {
+                                            return 85;
+                                        } else {
+                                            return 95;
+                                        }
+                                    } else {
+                                        if (v[8] == 4) {
+                                            return 96;
+                                        } else {
+                                            return 79;
                                         }
                                     }
                                 }
@@ -117,15 +117,15 @@ function CalculateTile(x,y)
                         } else {
                             if (v[0] != 4) {
                                 if (v[6] != 4) {
-                                    return 70;
+                                    return 80;
                                 } else {
-                                    return 95;
+                                    return 105;
                                 }                                
                             } else {
                                 if (v[6] != 4) {
-                                    return 96;
+                                    return 106;
                                 } else {
-                                    return 61;
+                                    return 71;
                                 }      
                             }                            
                         }
@@ -133,19 +133,19 @@ function CalculateTile(x,y)
                         if (v[5] == 4 || v[5] == 5) {
                             if (v[2] != 4) {
                                 if (v[8] != 4) {
-                                    return 68;
+                                    return 78;
                                 } else {
-                                    return 93;
+                                    return 103;
                                 }                                
                             } else {
                                 if (v[8] != 4) {
-                                    return 94;
+                                    return 104;
                                 } else {
-                                    return 59;
+                                    return 69;
                                 }                                
                             }                            
                         } else {
-                            return 54;                       
+                            return 64;
                         }
                     }
                 } else {
@@ -153,33 +153,33 @@ function CalculateTile(x,y)
                         if (v[5] == 4 || v[5] == 5) {
                             if (v[0] != 4) {
                                 if (v[2] != 4) {
-                                    return 72;
+                                    return 82;
                                 } else {
-                                    return 91;
+                                    return 101;
                                 }                                
                             } else {
                                 if (v[2] != 4) {
-                                    return 92;
+                                    return 102;
                                 } else {
-                                    return 63;
+                                    return 73;
                                 }                                
                             }                            
                         } else {
                             if (v[0] != 4) {
-                                return 73;
+                                return 83;
                             } else {
-                                return 64;
+                                return 74;
                             }                            
                         }
                     } else {
                         if (v[5] == 4 || v[5] == 5) {
                             if (v[2] != 4) {
-                                return 71;
+                                return 81;
                             } else {
-                                return 62;
+                                return 72;
                             }                            
                         } else {
-                            return 55;
+                            return 65;
                         }
                     }
                 }
@@ -189,57 +189,243 @@ function CalculateTile(x,y)
                         if (v[5] == 4 || v[5] == 5) {
                             if (v[6] != 4) {
                                 if (v[8] != 4) {
-                                    return 66;
+                                    return 76;
                                 } else {
-                                    return 89;
+                                    return 99;
                                 }                                
                             } else {
                                 if (v[8] != 4) {
-                                    return 90;
+                                    return 100;
                                 } else {
-                                    return 57;
+                                    return 67;
                                 }                                
                             }                            
                         } else {
                             if (v[6] != 4) {
-                                return 67;
+                                return 77;
                             } else {
-                                return 58;
+                                return 68;
                             }                            
                         }
                     } else {
                         if (v[5] == 4 || v[5] == 5) {
                             if (v[8] != 4) {
-                                return 65;
+                                return 75;
                             } else {
-                                return 56;
+                                return 66;
                             }                            
                         } else {
-                            return 53;
+                            return 63;
                         }
                     }
                 } else {
                     if (v[3] == 4 || v[3] == 5) {
                         if (v[5] == 4 || v[5] == 5) {
-                            return 51;
+                            return 61;
                         } else {
-                            return 52;
+                            return 62;
                         }
                     } else {
                         if (v[5] == 4 || v[5] == 5) {
-                            return 50;
+                            return 60;
                         } else {
-                            return 97;
+                            return 107;
                         }
                     }
                 }
             }     
         case 5:
-            return 108;
+            return 118;
         case 6:
             return 3;
-        case 7:
-            return 12;
+        case 7: //Trees
+            if (v[1] == 7) {
+                if (v[7] == 7) {
+                    if (v[3] == 7) {
+                        if (v[5] == 7) {
+                            //Corners
+                            if (v[0] == 7) {
+                                if (v[2] == 7) {
+                                    if (v[6] == 7) {
+                                        if (v[8] == 7) {
+                                            return 22;
+                                        } else {
+                                            return 40;
+                                        }
+                                    } else {
+                                        if (v[8] == 7) {
+                                            return 41;
+                                        } else {
+                                            return 36;
+                                        }
+                                    }
+                                } else {
+                                    if (v[6] == 7) {
+                                        if (v[8] == 7) {
+                                            return 42;
+                                        } else {
+                                            return 38;
+                                        }
+                                    } else {
+                                        if (v[8] == 7) {
+                                            return 50;
+                                        } else {
+                                            return 45;
+                                        }
+                                    }
+                                }
+                            } else {
+                                if (v[2] == 7) {
+                                    if (v[6] == 7) {
+                                        if (v[8] == 7) {
+                                            return 45;
+                                        } else {
+                                            return 49;
+                                        }
+                                    } else {
+                                        if (v[8] == 7) {
+                                            return 39;
+                                        } else {
+                                            return 46;
+                                        }
+                                    }
+                                } else {
+                                    if (v[6] == 7) {
+                                        if (v[8] == 7) {
+                                            return 37;
+                                        } else {
+                                            return 47;
+                                        }
+                                    } else {
+                                        if (v[8] == 7) {
+                                            return 48;
+                                        } else {
+                                            return 31;
+                                        }
+                                    }
+                                }
+                            }
+
+                        } else {
+                            if (v[0] != 7) {
+                                if (v[6] != 7) {
+                                    return 32;
+                                } else {
+                                    return 57;
+                                }
+                            } else {
+                                if (v[6] != 7) {
+                                    return 58;
+                                } else {
+                                    return 23;
+                                }
+                            }
+                        }
+                    } else {
+                        if (v[5] == 7) {
+                            if (v[2] != 7) {
+                                if (v[8] != 7) {
+                                    return 32;
+                                } else {
+                                    return 55;
+                                }
+                            } else {
+                                if (v[8] != 7) {
+                                    return 56;
+                                } else {
+                                    return 21;
+                                }
+                            }
+                        } else {
+                            return 16;
+                        }
+                    }
+                } else {
+                    if (v[3] == 7) {
+                        if (v[5] == 7) {
+                            if (v[0] != 7) {
+                                if (v[2] != 7) {
+                                    return 34;
+                                } else {
+                                    return 53;
+                                }
+                            } else {
+                                if (v[2] != 7) {
+                                    return 54;
+                                } else {
+                                    return 25;
+                                }
+                            }
+                        } else {
+                            if (v[0] != 7) {
+                                return 35;
+                            } else {
+                                return 26;
+                            }
+                        }
+                    } else {
+                        if (v[5] == 7) {
+                            if (v[2] != 7) {
+                                return 33;
+                            } else {
+                                return 24;
+                            }
+                        } else {
+                            return 17;
+                        }
+                    }
+                }
+            } else {
+                if (v[7] == 7) {
+                    if (v[3] == 7) {
+                        if (v[5] == 7) {
+                            if (v[6] != 7) {
+                                if (v[8] != 7) {
+                                    return 28;
+                                } else {
+                                    return 51;
+                                }
+                            } else {
+                                if (v[8] != 7) {
+                                    return 52;
+                                } else {
+                                    return 19;
+                                }
+                            }
+                        } else {
+                            if (v[6] != 7) {
+                                return 29;
+                            } else {
+                                return 20;
+                            }
+                        }
+                    } else {
+                        if (v[5] == 7) {
+                            if (v[8] != 7) {
+                                return 27;
+                            } else {
+                                return 18;
+                            }
+                        } else {
+                            return 15;
+                        }
+                    }
+                } else {
+                    if (v[3] == 7) {
+                        if (v[5] == 7) {
+                            return 13;
+                        } else {
+                            return 14;
+                        }
+                    } else {
+                        if (v[5] == 7) {
+                            return 12;
+                        } else {
+                            return 59;
+                        }
+                    }
+                }
+            }
     }
 }
 
