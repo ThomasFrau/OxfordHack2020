@@ -136,7 +136,7 @@ class Item {
 		let finalItem = '';
 
 		let typesOfArmour = ["splint", "half plate", "hide", "hood", "clogs", "underwear", "shirt", "t-shirt", "trousers", "breastplate", "sliders", "boots", "helmet", "tin-foil hat", "gloves", "gauntlets", "greaves", "sunglasses", "cloak", "veil", "robe", "chainveil armour"];
-		let typesOfProtection = ["with protection from germans", "with protection from goblins", "with protection from zombies", "with protection from fire", "with protection from ice", "with protection from dragons", "with protection from monkeys", "with protection from devils", "with protection from demons"];
+		let typesOfProtection = ["with protection from germans", "with protection from goblins", "with protection from zombies", "with protection from fire", "with protection from ice", "with protection from dragons", "with protection from monkeys", "with protection from devils", "with protection from demons", "that make you slightly uncomfortable", "that gives you a lot of confidence", "that minimise your confidence", "that makes you look funny"];
 
 		let randAdj = Math.floor(Math.random() * adjectives.length);
 		let randArmour = Math.floor(Math.random() * typesOfArmour.length);
@@ -151,7 +151,7 @@ class Item {
 
 		let foodAdjectives = ["Poisoned", "Chewy", "Burnt", "Acidic", "Scrumptious", "Sour", "Greasy", "Moldy", "Stale", "Suspiciously gray", "Fresh", "Wet", "Dry", "Crunchy", "Rotten", "Stale", "Garlic", "Salty", "Sweet", "Cheesy", "Kosher", "Halal", "Deep-fried", "Plain", "Succulent", "Tangy", "Crommulent", "Appetising", "Embiggening"];
 		let foods = ["bread", "pizza", "soup", "baguette", "steak", "kebab", "rice", "cake", "eggs", "ham", "honey", "chicken", "turkey", "fish", "fungi", "burrito", "curry", "duck", "gnocchi", "hamburger", "jerky", "quiche", "yogurt", "zucchini", "tangerine", "oatmeal", "urchins"];
-		let foodAttributes = ["looks very delicious", "looks very suspicious"];
+		let foodAttributes = ["looks very delicious", "looks very suspicious", "tastes poorly", "is moving around slightly", "is uncomfortably large", "is very tiny", "tastes like chicken", "is poisoned", "looks like it is poisoned"];
 
 		let randFoodAdj = Math.floor(Math.random() * foodAdjectives.length);
 		let randFood = Math.floor(Math.random() * foods.length);
