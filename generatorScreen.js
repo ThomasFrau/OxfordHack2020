@@ -51,24 +51,24 @@ function CalculateTile(x,y)
         case 1:
             return 1;
         case 2:
-            if (v[1] == 2) {
-                if (v[7] == 2) {
-                    if (v[3] == 2) {
-                        if (v[5] == 2) {
+            if (v[1] == 2 || v[1] == 5) {
+                if (v[7] == 2 || v[7] == 5) {
+                    if (v[3] == 2 || v[3] == 5) {
+                        if (v[5] == 2 || v[5] == 5) {
                             return 2;
                         } else {
                             return 112;
                         }
                     } else {
-                        if (v[5] == 2) {
+                        if (v[5] == 2 || v[5] == 5) {
                             return 111;
                         } else {
                             return 116;
                         }
                     }
                 } else {
-                    if (v[3] == 2) {
-                        if (v[5] == 2) {
+                    if (v[3] == 2 || v[3] == 5) {
+                        if (v[5] == 2 || v[5] == 5) {
                             return 114;
                         } else {
                             if (v[0] == 2) {
@@ -78,7 +78,7 @@ function CalculateTile(x,y)
                             }
                         }
                     } else {
-                        if (v[5] == 2) {
+                        if (v[5] == 2 || v[5] == 5) {
                             if (v[2] == 2) {
                                 return 113;
                             } else {
@@ -90,9 +90,9 @@ function CalculateTile(x,y)
                     }
                 }
             } else {
-                if (v[7] == 2) {
-                    if (v[3] == 2) {
-                        if (v[5] == 2) {
+                if (v[7] == 2 || v[7] == 5) {
+                    if (v[3] == 2 || v[3] == 5) {
+                        if (v[5] == 2 || v[5] == 5) {
                             return 109;
                         } else {
                             if (v[6] == 2) {
@@ -102,7 +102,7 @@ function CalculateTile(x,y)
                             }
                         }
                     } else {
-                        if (v[5] == 2) {
+                        if (v[5] == 2 || v[5] == 5) {
                             if (v[8] == 2) {
                                 return 108;
                             } else {
@@ -113,14 +113,14 @@ function CalculateTile(x,y)
                         }
                     }
                 } else {
-                    if (v[3] == 2) {
-                        if (v[5] == 2) {
+                    if (v[3] == 2 || v[3] == 5) {
+                        if (v[5] == 2 || v[5] == 5) {
                             return 117;
                         } else {
                             return 127;
                         }
                     } else {
-                        if (v[5] == 2) {
+                        if (v[5] == 2 || v[5] == 5) {
                             return 126;
                         } else {
                             return 0;
