@@ -19,7 +19,11 @@ function DisplayMap()
     {
         for (let x = 0; x < mapArray.length; x++)
         {
-            context.drawImage(tiles, 16 * CalculateTile(x, y), 0, 16, 16, 16 * x, 16 * y, 16, 16);
+            if (grassArray[x][y] == 0) {
+                context.drawImage(tiles, 16 * CalculateTile(x, y), 0, 16, 16, 16 * x, 16 * y, 16, 16);
+            } else {
+                context.drawImage(tiles, 16 * CalculateTile(x, y), 16, 16, 16, 16 * x, 16 * y, 16, 16);
+            }
         }
     }
 }
