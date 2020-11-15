@@ -17,6 +17,11 @@ function TestFunction()
 
 function DisplayMap()
 {
+    if (document.getElementById("sepiaBox").checked) {
+        tiles.src = "Assets/tileSet/tilesetSepia.png";
+    } else {
+        tiles.src = "Assets/tileSet/tileset.png";
+    }
     mapArray = genMap();
 
     console.log(mapArray);
