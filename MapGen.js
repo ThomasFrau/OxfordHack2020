@@ -327,7 +327,6 @@ function genMap(){
     if (mapArray[i].length > 50){
       mapArray[i] = mapArray[i].slice(0,50);
     }
-    document.write(mapArray[i] + "<br>");
   }
   return mapArray;
 }
@@ -353,7 +352,6 @@ function noiseReturn(grassArray){
       }
       propensity = grassArray[j][i];
     }
-    document.write(grassArray[i] + "<br>");
   }
   return grassArray;
 }
