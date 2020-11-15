@@ -6,6 +6,7 @@ class Item
 	constructor()
 	{
 		this.stats =[];
+		this.type;
 		this.item = this.createItem();
 		
 
@@ -25,9 +26,10 @@ class Item
 		let typeOfItem = ["Trinket", "Weapon", "Armour", "Food"];
 		let itemTomake = Math.floor(Math.random() * typeOfItem.length);
 
+		this.type = typeOfItem[itemTomake];
 		this.createStats(typeOfItem[itemTomake]);
 
-		console.log(this.stats[0]);
+		console.log(this.stats);
 
 		switch(typeOfItem[itemTomake])
 		{
@@ -51,24 +53,40 @@ class Item
 
 	createStats(item)
 	{
+		//could make a second method for this, however it would probably require more case statements
 		console.log(item);
-		switch(item)
-		{
-			case "Trinket":
-				this.stats.push(this.randomWeight(10));
-				break;
-			case "Weapon":
-				this.stats.push(this.randomWeight(20));
-				break;
-
-			case "Armour":
-				this.stats.push(this.randomWeight(30));
-				break;
-			case "Food":
-				this.stats.push(this.randomWeight(3));
-				break;
-		}
+			switch(item)
+			{
+				case "Trinket":
+					this.stats.push(this.randomWeight(10));
+					break;
+				case "Weapon":
+					this.stats.push(this.randomWeight(20));
+					this.stats.push(this.makeDamage());
+					break;
+				case "Armour":
+					this.stats.push(this.randomWeight(30));
+					this.stats.push(Math.floor(Math.random() * 5) + 10);
+					break;
+				case "Food":
+					this.stats.push(this.randomWeight(3));
+					break;
+			}
 	}
+
+
+	makeDamage()
+	{
+		let finalDamage = "";
+		let sidesOfDice = ["d4", "d6", "d12", "d20"];
+		let amountOfThrows = Math.floor(Math.random() * 6);
+
+		let randSide = Math.floor(Math.random() * sidesOfDice.length);
+		let randThrow = Math.floor(Math.random() * amountOfThrows) + 1;
+
+		finalDamage = randThrow + sidesOfDice[randSide];
+		return finalDamage;
+    }
 
 	//returns random weight based by given max value
 	randomWeight(maxi)
@@ -157,5 +175,22 @@ function generateItem()
 	//probably can be done via accesing only one method from class Item(), for now item.makeTrinket() will have to be good enough
 
 	document.getElementById("Item").innerHTML = item.item + ".";
-	document.getElementById("Stats").innerHTML = "Weight is: " + item.stats[0] + ".";
+	document.getElementById("lstWeight").innerHTML = "Weight is: " + item.stats[0];
+	if (item.type == "Weapon") {
+		let changingElement = document.getElementById("lstDam");
+		changingElement.innerHTML = "Damage is: " + item.stats[1];
+		changingElement.setAttribute("class", "notHidden");
+		let otherElement = document.getElementById("lstArm");
+		otherElement.innerHTML = "AC is: ";
+		otherElement.setAttribute("class", "hidden");
+	}
+	else if (item.type == "Armour") {
+		let changingElement = document.getElementById("lstArm");
+		changingElement.innerHTML = "AC is: " + item.stats[1];
+		changingElement.setAttribute("class", "notHidden");
+		let otherElement = document.getElementById("lstDam");
+		otherElement.innerHTML = "Damage is: ";
+		otherElement.setAttribute("class", "notHidden");
+	}
+
 }
