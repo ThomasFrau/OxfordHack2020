@@ -100,7 +100,7 @@ class Item {
 		//takes random positions from typesOfTrinkets and typesOfEffects and concats them into one string
 		let finalItem = '';
 		let typesOfTrinkets = ["vape pen", "dreamcatcher", "rubber duck", "cigarettes", "amulet", "ring", "tooth", "earring", "spoon", "mirror", "cup", "hairbrush", "doorknob", "book", "eye", "deck of cards", "bag of dice", "keychain"];
-		let typesOfEffects = ["aloows you to speak any language you wish", "makes you instantly cool", "never gets lost", "gives you the ability to see in the night", "that opens any door you wish", "never gets dirty", "dimly glows any colour you want it to", "gives you teleportation skills", "makes you laugh constantly", "turns you invisible", "makes you go mad", "turns you into a wolf", "allows you to hear to demons", "turns you into a pickle", "makes you really hungry all the time", "you can't take off", "makes you forget", "allows the demons to speak back", "makes you psychic", "makes you addicted to garlic bread"];
+		let typesOfEffects = ["allows you to speak any language you wish", "makes you instantly cool", "never gets lost", "gives you the ability to see in the night", "that opens any door you wish", "never gets dirty", "dimly glows any colour you want it to", "gives you teleportation skills", "makes you laugh constantly", "turns you invisible", "makes you go mad", "turns you into a wolf", "allows you to hear to demons", "turns you into a pickle", "makes you really hungry all the time", "you can't take off", "makes you forget", "allows the demons to speak back", "makes you psychic", "makes you addicted to garlic bread"];
 
 		let randAdj = Math.floor(Math.random() * adjectives.length);
 		let randType = Math.floor(Math.random() * typesOfTrinkets.length);
