@@ -180,11 +180,17 @@ function generateItem()
 		let changingElement = document.getElementById("lstDam");
 		changingElement.innerHTML = "Damage is: " + item.stats[1];
 		changingElement.setAttribute("class", "notHidden");
+		let otherElement =  = document.getElementById("lstArm");
+		otherElement.innerHTML = "AC is: ";
+		otherElement.setAttribute("class", "hidden");
 	}
 	else if (item.type == "Armour") {
 		let changingElement = document.getElementById("lstArm");
 		changingElement.innerHTML = "AC is: " + item.stats[1];
 		changingElement.setAttribute("class", "notHidden");
+		let otherElement = document.getElementById("lstDam");
+		otherElement.innerHTML = "Damage is: " + item.stats[1];
+		otherElement.setAttribute("class", "notHidden");
 	}
 
 }
