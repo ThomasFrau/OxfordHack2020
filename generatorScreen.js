@@ -42,6 +42,69 @@ function CalculateTile(x,y)
         case 1:
             return 1;
         case 2:
+            if (v[1] == 2) {
+                if (v[7] == 2) {
+                    if (v[3] == 2) {
+                        if (v[5] == 2) {
+                            return 2;
+                        } else {
+                            return 112;
+                        }
+                    } else {
+                        if (v[5] == 2) {
+                            return 111;
+                        } else {
+                            return 116;
+                        }
+                    }
+                } else {
+                    if (v[3] == 2) {
+                        if (v[5] == 2) {
+                            return 114;
+                        } else {
+                            return 115;
+                        }
+                    } else {
+                        if (v[5] == 2) {
+                            return 113;
+                        } else {
+                            return 0;
+                        }
+                    }
+                }
+            } else {
+                if (v[7] == 2) {
+                    if (v[3] == 2) {
+                        if (v[5] == 2) {
+                            return 109;
+                        } else {
+                            return 110;
+                        }
+                    } else {
+                        if (v[5] == 2) {
+                            return 108;
+                        } else {
+                            return 0;
+                        }
+                    }
+                } else {
+                    if (v[3] == 2) {
+                        if (v[5] == 2) {
+                            return 117;
+                        } else {
+                            return 0;
+                        }
+                    } else {
+                        if (v[5] == 2) {
+                            return 0;
+                        } else {
+                            return 0;
+                        }
+                    }
+                }
+            }
+
+
             return 2;
         case 3:
             return 0;      
